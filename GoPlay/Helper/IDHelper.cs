@@ -1,0 +1,22 @@
+namespace GoPlay.Helper
+{
+    public class IDHelper
+    {
+        public int Max { get; }
+        private int m_current = 0;
+        public IDHelper(int max)
+        {
+            this.Max = max;
+        }
+
+        public int Next() {
+            if(m_current == Max) {
+                m_current = 0;
+            } else {
+                m_current++;
+            }
+
+            return m_current;
+        }
+    }
+}
