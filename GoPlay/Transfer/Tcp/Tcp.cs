@@ -2,53 +2,77 @@
 using System.IO;
 using System;
 using GoPlay.Helper;
+using GoPlay.Helper.Extensions;
+using System.Collections.Generic;
+using System.Threading;
+using System.Collections;
 
-namespace GoPlay.Transfer.Tcp {
-	public class Tcp : ITransfer {
-		public const int TIME_OUT = 8000;
+namespace GoPlay.Transfer.Tcp
+{
+    public class Tcp : ITransfer
+    {
+        public const int TIME_OUT = 8000;
         public const int BUFFER_SIZE = 1024;
 
         private byte[] m_buffer = new byte[1024];
-        
-		private TcpClient m_tcpClient = new TcpClient();
-		public NetworkStream Stream {
-			get {
-				return m_tcpClient.GetStream();
-			}
-		}
 
-		public bool CanRead {
-			get {
-				return Stream.CanRead;
-			}
-		}
-		public event Action<ITransfer> OnConnected;
-		public event Action<ITransfer> OnDisconnected;
-		public event Action<Exception> OnError;
+        private TcpClient m_tcpClient = new TcpClient();
+        public NetworkStream Stream
+        {
+            get
+            {
+                return m_tcpClient.GetStream();
+            }
+        }
 
-		private void OnConnectedEvent(ITransfer transfer) {
-			if (OnConnected == null) return;
-			OnConnected(transfer);
-		}
+        private object m_locker = new object();
+        private ArrayList m_buffersBeforeError = ArrayList.Synchronized(new ArrayList());
+        //private List<byte[]> m_buffersBeforeError = new List<byte[]>();
 
-		private void OnDisconnectedEvent(ITransfer transfer) {
-			if (OnDisconnected == null) return;
-			OnDisconnected(transfer);
-		}
+        public bool CanRead
+        {
+            get
+            {
+                return Stream.CanRead;
+            }
+        }
+        public event Action<ITransfer> OnConnected;
+        public event Action<ITransfer> OnDisconnected;
+        public event Action<Exception> OnError;
 
-		private void OnErrorEvent(Exception err) {
-			if (OnError == null) return;
-			OnError(err);
-		}
+        public Tcp()
+        {
+        }
 
-		public bool Connceted { 
-			get {
-				if (m_tcpClient == null) return false;
-				return m_tcpClient.Connected;
-			}
-		}
+        private void OnConnectedEvent(ITransfer transfer)
+        {
+            if (OnConnected == null) return;
+            OnConnected(transfer);
+        }
 
-		public void Connect(string host, int port) {
+        private void OnDisconnectedEvent(ITransfer transfer)
+        {
+            if (OnDisconnected == null) return;
+            OnDisconnected(transfer);
+        }
+
+        private void OnErrorEvent(Exception err)
+        {
+            if (OnError == null) return;
+            OnError(err);
+        }
+
+        public bool Connceted
+        {
+            get
+            {
+                if (m_tcpClient == null) return false;
+                return m_tcpClient.Connected;
+            }
+        }
+
+        public void Connect(string host, int port)
+        {
             try
             {
                 m_tcpClient.Connect(host, port);
@@ -60,16 +84,18 @@ namespace GoPlay.Transfer.Tcp {
             {
                 OnErrorEvent(err);
             }
-		}
+        }
 
-		public void Disconnect() {
-			if(m_tcpClient.Connected) m_tcpClient.Close();
-			OnDisconnectedEvent(this);
-		}
+        public void Disconnect()
+        {
+            if (m_tcpClient.Connected) m_tcpClient.Close();
+            OnDisconnectedEvent(this);
+        }
 
-		public void ReadAsync(Action<byte[]> callback) {
-			try
-			{
+        public void ReadAsync(Action<byte[]> callback)
+        {
+            try
+            {
 
                 Stream.BeginRead(m_buffer, 0, BUFFER_SIZE, state =>
                 {
@@ -78,7 +104,8 @@ namespace GoPlay.Transfer.Tcp {
                         int length = Stream.EndRead(state);
                         if (length > 0)
                         {
-                            using (var ms = new MemoryStream()) {
+                            using (var ms = new MemoryStream())
+                            {
                                 ms.Write(m_buffer, 0, length);
                                 callback(ms.ToArray());
                             }
@@ -95,36 +122,50 @@ namespace GoPlay.Transfer.Tcp {
                         Disconnect();
                     }
                 }, this);
-			}
-			catch (System.Exception err)
-			{
-				OnErrorEvent(err);
-				Disconnect();
-			}
-		}
+            }
+            catch (System.Exception err)
+            {
+                OnErrorEvent(err);
+                Disconnect();
+            }
+        }
 
-		public void WriteAsync(byte[] buffer) {
-			if(buffer == null) return;
-			if(buffer.Length == 0) return;
+        public void WriteAsync(byte[] buffer)
+        {
+            if (buffer == null) return;
+            if (buffer.Length == 0) return;
 
-			// DebugHelper.PrintBytes("Write: {0}", buffer);
-			try
-			{
+            try
+            {
+                //m_buffersBeforeError.Add(buffer);
                 Stream.BeginWrite(buffer, 0, buffer.Length, state =>
                 {
-                    if ( ! Connceted) return;
+                    if (!Connceted) return;
                     Stream.EndWrite(state);
+                    //m_buffersBeforeError.Remove(buffer);
                 }, this);
 
-				return;
-			}
-			catch (System.Exception err)
-			{
-				OnErrorEvent(err);
-				Disconnect();
-			}
-			
-			return;
-		}
-	}
+                return;
+            }
+            catch (System.Exception err)
+            {
+                OnErrorEvent(err);
+                Disconnect();
+            }
+
+            return;
+        }
+
+        public void ReWriteBufferBeforeError()
+        {
+            if (m_buffersBeforeError.Count <= 0) return;
+
+            for (int i = m_buffersBeforeError.Count - 1; i >= 0; --i)
+            {
+                var item = (byte[])m_buffersBeforeError[i];
+                WriteAsync(item);
+                m_buffersBeforeError.Remove(item);
+            }
+        }
+    }
 }

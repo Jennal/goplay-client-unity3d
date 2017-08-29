@@ -50,6 +50,7 @@
     <Compile Include="Helper\BigEndianReader.cs" />
     <Compile Include="Helper\BigEndianWriter.cs" />
     <Compile Include="Helper\DebugHelper.cs" />
+    <Compile Include="Helper\Extensions\MemoryStreamExtension.cs" />
     <Compile Include="Helper\IDHelper.cs" />
     <Compile Include="Package\Enum.cs" />
     <Compile Include="Package\ErrorMessage.cs" />

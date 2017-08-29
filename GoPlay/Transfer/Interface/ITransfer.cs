@@ -9,7 +9,7 @@ namespace GoPlay.Transfer
 		event Action<ITransfer> OnConnected;
 		event Action<ITransfer> OnDisconnected;
 		event Action<Exception> OnError;
-
+        
 		bool Connceted{ get; }
 		bool CanRead { get; }
 
@@ -18,5 +18,7 @@ namespace GoPlay.Transfer
 
         void ReadAsync(Action<byte[]> callback);
         void WriteAsync(byte[] buffer);
-	}
+
+        void ReWriteBufferBeforeError();
+    }
 }

@@ -5,6 +5,7 @@ using GoPlay.Package;
 using GoPlay.Transfer;
 using GoPlay.Helper;
 using System.IO;
+using GoPlay.Helper.Extensions;
 
 namespace GoPlay.Service.Processor
 {
@@ -108,7 +109,7 @@ namespace GoPlay.Service.Processor
                         // DebugHelper.PrintBytes(" => Body: {0}", buffer);
                     }
                     //Debug.Log("Write-1: {0} => {1}", m_bufferStream.Length, m_bufferStream.Position);
-                    Flush(m_bufferStream);
+                    m_bufferStream.ClearRead();
                     //Debug.Log("Write-2: {0} => {1}", m_bufferStream.Length, m_bufferStream.Position);
                     recvPack(new Pack(header, data));
                     header = Header.TrySetFromStream(m_bufferStream);
@@ -124,17 +125,6 @@ namespace GoPlay.Service.Processor
             m_requestSuccessEventDispatcher.Clear();
 			m_requestFailedEventDispatcher.Clear();
 			m_pushEventDispatcher.Clear();
-        }
-
-        private void Flush(MemoryStream ms)
-        {
-            if(ms.Position == m_bufferStream.Length)
-            {
-                byte[] buffer = ms.GetBuffer();
-                Array.Clear(buffer, 0, buffer.Length);
-                ms.Position = 0;
-                ms.SetLength(0);
-            }
         }
 
         public void RegistRequestCallback<RT>(byte id, Action<RT> succCallback, Action<ErrorMessage> failedCallback) {
