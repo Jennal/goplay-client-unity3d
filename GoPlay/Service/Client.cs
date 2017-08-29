@@ -112,12 +112,12 @@ namespace GoPlay.Service
             ClearPushEvents();
         }
 
-        private void ClearPushEvents()
+        public void ClearPushEvents()
         {
             m_recvProcessor.ClearPushEvents();
         }
 
-        private void ClearRequestEvents()
+        public void ClearRequestEvents()
         {
             m_recvProcessor.ClearRequestEvents();
         }
