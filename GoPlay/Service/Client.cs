@@ -102,8 +102,26 @@ namespace GoPlay.Service
         public void Once<RT, T>(string evt, RT recvObj, Action<T> callback) {
             m_recvProcessor.Once(evt, recvObj, callback);
         }
-		#endregion
-		#endregion
-	}
+        #endregion
+        #endregion
+
+        #region Clear Events
+        public void ClearEvents()
+        {
+            ClearRequestEvents();
+            ClearPushEvents();
+        }
+
+        private void ClearPushEvents()
+        {
+            m_recvProcessor.ClearPushEvents();
+        }
+
+        private void ClearRequestEvents()
+        {
+            m_recvProcessor.ClearRequestEvents();
+        }
+        #endregion
+    }
 }
 

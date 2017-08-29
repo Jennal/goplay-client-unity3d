@@ -121,10 +121,24 @@ namespace GoPlay.Service.Processor
 
         public void Reset() {
             m_processing = false;
+            //ClearEvents();
+        }
 
+        public void ClearEvents()
+        {
+            ClearRequestEvents();
+            ClearPushEvents();
+        }
+
+        public void ClearPushEvents()
+        {
+            m_pushEventDispatcher.Clear();
+        }
+
+        public void ClearRequestEvents()
+        {
             m_requestSuccessEventDispatcher.Clear();
-			m_requestFailedEventDispatcher.Clear();
-			m_pushEventDispatcher.Clear();
+            m_requestFailedEventDispatcher.Clear();
         }
 
         public void RegistRequestCallback<RT>(byte id, Action<RT> succCallback, Action<ErrorMessage> failedCallback) {
