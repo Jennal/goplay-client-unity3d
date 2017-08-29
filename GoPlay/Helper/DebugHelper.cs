@@ -5,12 +5,30 @@ namespace GoPlay.Helper
 {
     public static class Debug
     {
+        public static void Log(string format)
+        {
+#if UNITY_EDITOR
+            Debug.Log(format);
+#else
+            Console.WriteLine(format);
+#endif
+        }
+
         public static void Log(string format, params object[] args)
         {
 #if UNITY_EDITOR
             Debug.LogFormat(format, args);
 #else
             Console.WriteLine(string.Format(format, args));
+#endif
+        }
+
+        public static void Error(string format)
+        {
+#if UNITY_EDITOR
+            Debug.Error(format);
+#else
+            Console.WriteLine(format);
 #endif
         }
 

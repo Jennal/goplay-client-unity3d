@@ -53,10 +53,17 @@ namespace GoPlay.Transfer.Tcp {
 		}
 
 		public void Connect(string host, int port) {
-			m_tcpClient.Connect(host, port);
-            Stream.ReadTimeout = TIME_OUT;
-            Stream.WriteTimeout = TIME_OUT;
-            OnConnectedEvent(this);
+            try
+            {
+                m_tcpClient.Connect(host, port);
+                Stream.ReadTimeout = TIME_OUT;
+                Stream.WriteTimeout = TIME_OUT;
+                OnConnectedEvent(this);
+            }
+            catch (Exception err)
+            {
+                OnErrorEvent(err);
+            }
 		}
 
 		public void Disconnect() {
@@ -75,7 +82,10 @@ namespace GoPlay.Transfer.Tcp {
                         int length = Stream.EndRead(state);
                         if (length > 0)
                         {
-                            callback(m_buffer);
+                            using (var ms = new MemoryStream()) {
+                                ms.Write(m_buffer, 0, length);
+                                callback(ms.ToArray());
+                            }
                         }
                         else
                         {

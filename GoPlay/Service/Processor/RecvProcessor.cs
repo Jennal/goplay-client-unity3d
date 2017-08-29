@@ -77,20 +77,43 @@ namespace GoPlay.Service.Processor
         public void Proc() {
             m_transfer.ReadAsync(buffer =>
             {
+                var lastPos = m_bufferStream.Position;
+                //Debug.Log("Position: {0}, Length: {1}", m_bufferStream.Position, m_bufferStream.Length);
+                m_bufferStream.Position = m_bufferStream.Length;
                 BinaryWriter bw = new BinaryWriter(m_bufferStream);
                 bw.Write(buffer);
-                m_bufferStream.Seek(-1 * buffer.Length, SeekOrigin.Current);
+                //Debug.Log("Position: {0} => {1}", lastPos, m_bufferStream.Position);
+                m_bufferStream.Position = lastPos;
+                //Debug.Log("Write-0: {0} => {1}", m_bufferStream.Length, m_bufferStream.Position);
 
-                var header = new Header(m_bufferStream);
-                byte[] data = null;
-                // Debug.Log(" => Header: " + header.ToString());
-                if (header.ContentSize > 0 && m_bufferStream.Length >= header.ContentSize)
+                lastPos = m_bufferStream.Position;
+                var header = Header.TrySetFromStream(m_bufferStream);
+                while (header != null)
                 {
-                    BinaryReader br = new BinaryReader(m_bufferStream);
-                    data = br.ReadBytes(header.ContentSize);
-                    // DebugHelper.PrintBytes(" => Body: {0}", buffer);
+                    byte[] data = null;
+                    //Debug.Log(" => Header: " + header.ToString());
+                    if (header.ContentSize > 0)
+                    {
+                        if ((m_bufferStream.Length - m_bufferStream.Position) >= header.ContentSize)
+                        {
+                            //Debug.Log("--------------------");
+                            BinaryReader br = new BinaryReader(m_bufferStream);
+                            data = br.ReadBytes(header.ContentSize);
+                        } else
+                        {
+                            //Debug.Log("+++++++++++++++++");
+                            m_bufferStream.Position = lastPos;
+                            if (m_processing) Proc();
+                            return;
+                        }
+                        // DebugHelper.PrintBytes(" => Body: {0}", buffer);
+                    }
+                    //Debug.Log("Write-1: {0} => {1}", m_bufferStream.Length, m_bufferStream.Position);
+                    Flush(m_bufferStream);
+                    //Debug.Log("Write-2: {0} => {1}", m_bufferStream.Length, m_bufferStream.Position);
+                    recvPack(new Pack(header, data));
+                    header = Header.TrySetFromStream(m_bufferStream);
                 }
-                recvPack(new Pack(header, data));
 
                 if(m_processing) Proc();
             });
@@ -102,6 +125,17 @@ namespace GoPlay.Service.Processor
             m_requestSuccessEventDispatcher.Clear();
 			m_requestFailedEventDispatcher.Clear();
 			m_pushEventDispatcher.Clear();
+        }
+
+        private void Flush(MemoryStream ms)
+        {
+            if(ms.Position == m_bufferStream.Length)
+            {
+                byte[] buffer = ms.GetBuffer();
+                Array.Clear(buffer, 0, buffer.Length);
+                ms.Position = 0;
+                ms.SetLength(0);
+            }
         }
 
         public void RegistRequestCallback<RT>(byte id, Action<RT> succCallback, Action<ErrorMessage> failedCallback) {

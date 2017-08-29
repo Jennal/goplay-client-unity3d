@@ -52,7 +52,7 @@ namespace GoPlay.Service.Processor
                 using (var bw = new BinaryWriter(ms))
                 {
                     bw.Write(pack.Header.GetBytes());
-                    bw.Write(pack.Data);
+                    if(pack.Data != null) bw.Write(pack.Data);
 
                     m_transfer.WriteAsync(ms.ToArray());
                 }

@@ -6,6 +6,7 @@ namespace GoPlay.Package
 {
 	public class Header
 	{
+        private const int CONST_LENGTH = 7;
 		private static IDHelper s_IDHelper = new IDHelper(byte.MaxValue);
 
 		public PackageType Type;
@@ -57,14 +58,46 @@ namespace GoPlay.Package
 			}
 		}
 
+        public static Header TrySetFromStream(Stream st)
+        {
+            var lastPos = st.Position;
+            if (st.Length - st.Position < CONST_LENGTH) return null;
+
+            var br = new BigEndianReader(st);
+            var packageType = (PackageType)br.ReadByte();
+            var encoding = (EncodingType)br.ReadByte();
+            var id = br.ReadByte();
+            var status = (Status)br.ReadByte();
+            var contentSize = br.ReadUInt16();
+            var routeSize = br.ReadByte();
+
+            if (st.Length - st.Position < routeSize)
+            {
+                st.Position = lastPos;
+                return null;
+            }
+            var routeBytes = br.ReadBytes(routeSize);
+            var route = System.Text.Encoding.UTF8.GetString(routeBytes);
+
+            return new Header
+            {
+                Type = packageType,
+                Encoding = encoding,
+                ID = id,
+                Status = status,
+                ContentSize = contentSize,
+                Route = route
+            };
+        }
+
 		public override string ToString() {
-			return string.Format("Header{{ Type: {0}, Encoding: {1}, ID: {2}, Status: {3}, ContentSize: {4}, Route: {5} }}",
+			return string.Format("Header{{ Type: {0}, Encoding: {1}, ID: {2}, Status: {3}, ContentSize: {4}, Route: \"{5}\" }}",
 				Type,
 				Encoding,
 				ID,
 				Status,
 				ContentSize,
-				Route);
+				Route ?? "");
 		}
 	}
 }
