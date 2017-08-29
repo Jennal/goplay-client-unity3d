@@ -2,9 +2,6 @@
 using GoPlay.Encode.Interface;
 using GoPlay.Transfer;
 using GoPlay.Package;
-using GoPlay.Event;
-using System.Collections.Generic;
-using System.Threading;
 using GoPlay.Service.Processor;
 using GoPlay.Helper;
 

@@ -26,7 +26,7 @@ namespace GoPlay.Helper
         public static void Error(string format)
         {
 #if UNITY_EDITOR
-            Debug.Error(format);
+            Debug.LogError(format);
 #else
             Console.WriteLine(format);
 #endif
@@ -35,7 +35,7 @@ namespace GoPlay.Helper
         public static void Error(string format, params object[] args)
         {
 #if UNITY_EDITOR
-            Debug.ErrorFormat(format, args);
+            Debug.LogErrorFormat(format, args);
 #else
             Console.WriteLine(string.Format(format, args));
 #endif

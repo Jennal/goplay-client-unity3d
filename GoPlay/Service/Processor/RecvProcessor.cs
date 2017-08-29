@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 using GoPlay.Encode.Interface;
 using GoPlay.Event;
 using GoPlay.Package;
@@ -77,16 +76,16 @@ namespace GoPlay.Service.Processor
         public void Proc() {
             m_transfer.ReadAsync(buffer =>
             {
-                var lastPos = m_bufferStream.Position;
+                var lastPos = m_bufferStream.Position; /* Save Pos */
                 //Debug.Log("Position: {0}, Length: {1}", m_bufferStream.Position, m_bufferStream.Length);
-                m_bufferStream.Position = m_bufferStream.Length;
+                m_bufferStream.Position = m_bufferStream.Length; /* Set Pos to End */
                 BinaryWriter bw = new BinaryWriter(m_bufferStream);
                 bw.Write(buffer);
                 //Debug.Log("Position: {0} => {1}", lastPos, m_bufferStream.Position);
-                m_bufferStream.Position = lastPos;
+                m_bufferStream.Position = lastPos; /* Restore Pos */
                 //Debug.Log("Write-0: {0} => {1}", m_bufferStream.Length, m_bufferStream.Position);
 
-                lastPos = m_bufferStream.Position;
+                lastPos = m_bufferStream.Position; /* Save Pos */
                 var header = Header.TrySetFromStream(m_bufferStream);
                 while (header != null)
                 {
@@ -102,7 +101,7 @@ namespace GoPlay.Service.Processor
                         } else
                         {
                             //Debug.Log("+++++++++++++++++");
-                            m_bufferStream.Position = lastPos;
+                            m_bufferStream.Position = lastPos; /* Restore Pos */
                             if (m_processing) Proc();
                             return;
                         }

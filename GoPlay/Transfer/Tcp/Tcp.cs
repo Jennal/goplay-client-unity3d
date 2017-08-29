@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.IO;
 using System;
-using GoPlay.Package;
 using GoPlay.Helper;
-using System.Threading;
 
 namespace GoPlay.Transfer.Tcp {
 	public class Tcp : ITransfer {
