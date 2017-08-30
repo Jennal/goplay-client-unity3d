@@ -15,15 +15,22 @@ namespace TestConsole
         {
             var client = new Client<Tcp, JsonEncoder>();
             client.OnError += Client_OnError;
+            client.OnDisconnected += Client_OnDisconnected;
 
             client.On("echo.push", client, (string str) =>
             {
                 Console.WriteLine("On Push: {0}", str);
             });
-            client.Connect("", 1234);
+            client.Connect("192.168.1.200", 1234);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 10000; i++)
             {
+                if (i == 10)
+                {
+                    client.Disconnect();
+                    break;
+                }
+
                 client.Notify("echo.services.notify", "Notify from client: " + i);
 
                 client.Request("echo.services.echo", "Request from client: " + i, (string str) =>
@@ -36,6 +43,11 @@ namespace TestConsole
             }
 
             Console.ReadKey();
+        }
+
+        private static void Client_OnDisconnected(GoPlay.Transfer.ITransfer obj)
+        {
+            obj.Connect("192.168.1.200", 1234);
         }
 
         private static void Client_OnError(Exception obj)

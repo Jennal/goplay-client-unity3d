@@ -2,6 +2,7 @@
 using System.IO;
 using System;
 using System.Collections;
+using GoPlay.Helper;
 
 namespace GoPlay.Transfer.Tcp
 {
@@ -12,7 +13,7 @@ namespace GoPlay.Transfer.Tcp
 
         private byte[] m_buffer = new byte[1024];
 
-        private TcpClient m_tcpClient = new TcpClient();
+        private TcpClient m_tcpClient;
         public NetworkStream Stream
         {
             get
@@ -71,6 +72,8 @@ namespace GoPlay.Transfer.Tcp
         {
             try
             {
+                if (m_tcpClient == null) m_tcpClient = new TcpClient();
+
                 m_tcpClient.Connect(host, port);
                 Stream.ReadTimeout = TIME_OUT;
                 Stream.WriteTimeout = TIME_OUT;
@@ -87,6 +90,7 @@ namespace GoPlay.Transfer.Tcp
             if (!Connected) return;
 
             m_tcpClient.Close();
+            m_tcpClient = null;
             OnDisconnectedEvent(this);
         }
 
@@ -94,11 +98,14 @@ namespace GoPlay.Transfer.Tcp
         {
             try
             {
+                if (!Connected) return;
 
                 Stream.BeginRead(m_buffer, 0, BUFFER_SIZE, state =>
                 {
                     try
                     {
+                        if (!Connected) return;
+
                         int length = Stream.EndRead(state);
                         if (length > 0)
                         {
@@ -114,14 +121,14 @@ namespace GoPlay.Transfer.Tcp
                         }
 
                     }
-                    catch (System.Exception err)
+                    catch (Exception err)
                     {
                         OnErrorEvent(err);
                         Disconnect();
                     }
                 }, this);
             }
-            catch (System.Exception err)
+            catch (Exception err)
             {
                 OnErrorEvent(err);
                 Disconnect();
@@ -136,16 +143,30 @@ namespace GoPlay.Transfer.Tcp
             try
             {
                 //m_buffersBeforeError.Add(buffer);
+                if (!Connected) return;
                 Stream.BeginWrite(buffer, 0, buffer.Length, state =>
                 {
-                    if (!Connected) return;
-                    Stream.EndWrite(state);
-                    //m_buffersBeforeError.Remove(buffer);
+                    try
+                    {
+                        if (!Connected) return;
+                        Stream.EndWrite(state);
+                        //m_buffersBeforeError.Remove(buffer);
+                    }
+                    catch (ArgumentException)
+                    {
+                        //Write error: begin from last connection / end with current connection
+                        //just ignore
+                    }
+                    catch (Exception err)
+                    {
+                        OnErrorEvent(err);
+                        Disconnect();
+                    }
                 }, this);
 
                 return;
             }
-            catch (System.Exception err)
+            catch (Exception err)
             {
                 OnErrorEvent(err);
                 Disconnect();
