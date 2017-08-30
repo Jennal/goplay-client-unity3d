@@ -1,10 +1,6 @@
 ﻿using System.Net.Sockets;
 using System.IO;
 using System;
-using GoPlay.Helper;
-using GoPlay.Helper.Extensions;
-using System.Collections.Generic;
-using System.Threading;
 using System.Collections;
 
 namespace GoPlay.Transfer.Tcp
@@ -62,7 +58,7 @@ namespace GoPlay.Transfer.Tcp
             OnError(err);
         }
 
-        public bool Connceted
+        public bool Connected
         {
             get
             {
@@ -88,7 +84,9 @@ namespace GoPlay.Transfer.Tcp
 
         public void Disconnect()
         {
-            if (m_tcpClient.Connected) m_tcpClient.Close();
+            if (!Connected) return;
+
+            m_tcpClient.Close();
             OnDisconnectedEvent(this);
         }
 
@@ -140,7 +138,7 @@ namespace GoPlay.Transfer.Tcp
                 //m_buffersBeforeError.Add(buffer);
                 Stream.BeginWrite(buffer, 0, buffer.Length, state =>
                 {
-                    if (!Connceted) return;
+                    if (!Connected) return;
                     Stream.EndWrite(state);
                     //m_buffersBeforeError.Remove(buffer);
                 }, this);

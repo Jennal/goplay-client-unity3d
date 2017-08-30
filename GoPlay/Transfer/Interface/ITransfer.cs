@@ -10,7 +10,7 @@ namespace GoPlay.Transfer
 		event Action<ITransfer> OnDisconnected;
 		event Action<Exception> OnError;
         
-		bool Connceted{ get; }
+		bool Connected{ get; }
 		bool CanRead { get; }
 
 		void Connect(string host, int port);
