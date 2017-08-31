@@ -2,31 +2,27 @@
 using GoPlay.Encode.Factory;
 using GoPlay.Package;
 using GoPlay.Service.Processor;
-using GoPlay.Transfer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace GoPlay.Service.HandShake
 {
     public class HandShakeManager
     {
         private Action m_onSuccess = null;
-        private SendProcessor m_transfer;
+        private SendProcessor m_sendProcessor;
 
         public HandShakeManager(SendProcessor transfer)
         {
-            m_transfer = transfer;
+            m_sendProcessor = transfer;
         }
 
-        public void SendRequest(Action onSuccess)
+        public void Send(Action onSuccess)
         {
             m_onSuccess = onSuccess;
-            m_transfer.Send("", new HandShakeClientData(), PackageType.PKG_HAND_SHAKE);
+            m_sendProcessor.Send("", new HandShakeClientData(), PackageType.PKG_HAND_SHAKE);
         }
 
-        public void RecvResponse(Pack pack)
+        public void Recv(Pack pack)
         {
             var encoder = EncoderFactory.Create(pack.Header.Encoding);
             var resp = encoder.Decode<HandShakeResponse>(pack.Data);

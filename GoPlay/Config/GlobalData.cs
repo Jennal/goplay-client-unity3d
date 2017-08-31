@@ -24,6 +24,8 @@ namespace GoPlay.Config
         private static HandShakeResponse m_handShakeResponse;
         private static HandShakeSaveData m_handShakeSaveData;
 
+        private static TimeSpan m_serverTimeSpan = new TimeSpan();
+
         private static IEncoder m_encoder = EncoderFactory.Create(EncodingType.ENCODING_JSON);
 
         public static GlobalDataSaveDelegate GlobalDataSaveDelegate = null;
@@ -55,6 +57,29 @@ namespace GoPlay.Config
             return m_handShakeSaveData.Routes[route];
         }
 
+        public static int GetHeartBeatRate()
+        {
+            if (m_handShakeResponse == null) return Consts.HeartBeatRate;
+            return m_handShakeResponse.HeartBeatRate;
+        }
+
+        public static int GetHeartBeatTimeOut()
+        {
+            return Consts.HeartBeatTimeOut;
+        }
+
+        public static int GetHeartBeatMaxLostTimes()
+        {
+            return Consts.HeartBeatMaxLostTimes;
+        }
+
+        public static DateTime GetServerTime()
+        {
+            var now = DateTime.Now;
+            now.Add(m_serverTimeSpan);
+            return now;
+        }
+
         public static void LoadData()
         {
             if (GlobalDataSaveDelegate == null) return;
@@ -74,6 +99,7 @@ namespace GoPlay.Config
         public static void Update(HandShakeResponse resp, IEncoder encoder)
         {
             m_handShakeResponse = resp;
+            m_serverTimeSpan = m_handShakeResponse.Now.Subtract(DateTime.Now);
             updateSaveData(encoder);
         }
 

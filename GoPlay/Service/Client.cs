@@ -5,6 +5,8 @@ using GoPlay.Package;
 using GoPlay.Service.Processor;
 using GoPlay.Helper;
 using GoPlay.Service.HandShake;
+using GoPlay.Service.HeartBeat;
+using GoPlay.Service.Ping;
 
 namespace GoPlay.Service
 {
@@ -18,9 +20,12 @@ namespace GoPlay.Service
 		private SendProcessor m_sendProcessor;
 		private RecvProcessor m_recvProcessor;
         private HandShakeManager m_handShakeManager;
+        private HeartBeatManager m_heartBeatManager;
 
         private bool m_isHandShaked = false;
         public bool Connected => m_transfer.Connected && m_isHandShaked;
+        public int AveragePing => PingCalculator.Default.AveragePing;
+        public int LastPing => PingCalculator.Default.LastPing;
 
         public event Action<ITransfer> OnConnected;
 
@@ -46,7 +51,8 @@ namespace GoPlay.Service
 		{
 			m_sendProcessor = new SendProcessor(m_transfer, m_encoder);
             m_handShakeManager = new HandShakeManager(m_sendProcessor);
-            m_recvProcessor = new RecvProcessor(m_sendProcessor, m_handShakeManager, m_transfer);
+            m_heartBeatManager = new HeartBeatManager(m_sendProcessor);
+            m_recvProcessor = new RecvProcessor(m_sendProcessor, m_handShakeManager, m_heartBeatManager, m_transfer);
 
 			m_transfer.OnConnected += HandleConnected;
 			m_transfer.OnDisconnected += HandleDisconnected;
@@ -60,9 +66,11 @@ namespace GoPlay.Service
 
         private void HandleConnected(ITransfer transfer)
         {
-            m_handShakeManager.SendRequest(() =>
+            m_handShakeManager.Send(() =>
             {
                 m_isHandShaked = true;
+                m_heartBeatManager.Start();
+
                 Debug.Log("OnConnected");
                 OnConnectedEvent(transfer);
             });
@@ -74,6 +82,7 @@ namespace GoPlay.Service
         {
             m_isHandShaked = false;
             Debug.Log("OnDisconnected");
+            m_heartBeatManager.Reset();
 			m_sendProcessor.Reset();
 			m_recvProcessor.Reset();
         }

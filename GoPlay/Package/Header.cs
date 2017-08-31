@@ -21,7 +21,9 @@ namespace GoPlay.Package
 		public string Route;
         public UInt16 RouteEncoded;
 
-        private Header() { }
+        internal Header() {
+            ID = (byte)s_IDHelper.Next();
+        }
 
 		public Header(string route)
 		{

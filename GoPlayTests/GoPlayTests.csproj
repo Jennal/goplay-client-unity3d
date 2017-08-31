@@ -59,7 +59,7 @@
     <Compile Include="Helper\IDHelperTests.cs" />
     <Compile Include="Package\HeaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transfer\Tcp\TcpTests.cs" />
+    <Compile Include="Service\Ping\PingCalculatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

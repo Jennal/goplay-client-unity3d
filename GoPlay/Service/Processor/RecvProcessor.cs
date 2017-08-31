@@ -8,6 +8,8 @@ using System.IO;
 using GoPlay.Helper.Extensions;
 using GoPlay.Encode.Factory;
 using GoPlay.Service.HandShake;
+using GoPlay.Service.HeartBeat;
+using GoPlay.Service.Ping;
 
 namespace GoPlay.Service.Processor
 {
@@ -15,6 +17,7 @@ namespace GoPlay.Service.Processor
     {
         private SendProcessor m_sendProcessor;
         private HandShakeManager m_handShakeManager;
+        private HeartBeatManager m_heartBeatManager;
         private ITransfer m_transfer;
         
 		private EventDispatcher<byte> m_requestSuccessEventDispatcher = new EventDispatcher<byte>();
@@ -24,10 +27,11 @@ namespace GoPlay.Service.Processor
         private bool m_processing = false;
         private MemoryStream m_bufferStream = new MemoryStream();
 
-        public RecvProcessor(SendProcessor sender, HandShakeManager manager, ITransfer transfer)
+        public RecvProcessor(SendProcessor sender, HandShakeManager manager, HeartBeatManager hbManager, ITransfer transfer)
         {
             m_sendProcessor = sender;
             m_handShakeManager = manager;
+            m_heartBeatManager = hbManager;
             m_transfer = transfer;
         }
 
@@ -37,7 +41,7 @@ namespace GoPlay.Service.Processor
         }
 
         private void recvHeartBeatResponse(Pack pack) {
-            //TODO:
+            m_heartBeatManager.Recv(pack);
         }
 
         private void recvPush(Pack pack) {
@@ -56,11 +60,11 @@ namespace GoPlay.Service.Processor
 
         private void recvHandShakeResponse(Pack pack)
         {
-            m_handShakeManager.RecvResponse(pack);
+            m_handShakeManager.Recv(pack);
         }
 
         private void recvPack(Pack pack) {
-            switch(pack.Header.Type) {
+            switch (pack.Header.Type) {
                 case PackageType.PKG_HEARTBEAT:
                     recvHeartBeat(pack);
                     break;
@@ -71,6 +75,7 @@ namespace GoPlay.Service.Processor
                     recvPush(pack);
                     break;
                 case PackageType.PKG_RESPONSE:
+                    PingCalculator.Default.Recv(pack.Header.ID);
                     recvResponse(pack);
                     break;
                 case PackageType.PKG_HAND_SHAKE_RESPONSE:

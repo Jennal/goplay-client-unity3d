@@ -4,6 +4,7 @@ using GoPlay.Package;
 using GoPlay.Transfer;
 using System.IO;
 using System.Collections.Generic;
+using GoPlay.Service.Ping;
 
 namespace GoPlay.Service.Processor
 {
@@ -55,6 +56,11 @@ namespace GoPlay.Service.Processor
                     if(pack.Data != null) bw.Write(pack.Data);
 
                     m_transfer.WriteAsync(ms.ToArray());
+
+                    if(pack.Header.Type == PackageType.PKG_REQUEST)
+                    {
+                        PingCalculator.Default.Send(pack.Header.ID);
+                    }
                 }
             }
         }

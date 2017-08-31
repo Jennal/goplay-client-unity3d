@@ -52,6 +52,7 @@
     <Compile Include="Helper\BigEndianReader.cs" />
     <Compile Include="Helper\BigEndianWriter.cs" />
     <Compile Include="Helper\DebugHelper.cs" />
+    <Compile Include="Helper\DelayCall.cs" />
     <Compile Include="Helper\Extensions\MemoryStreamExtension.cs" />
     <Compile Include="Helper\IDHelper.cs" />
     <Compile Include="Helper\Md5Helper.cs" />
@@ -59,10 +60,13 @@
     <Compile Include="Package\ErrorMessage.cs" />
     <Compile Include="Package\HandShake.cs" />
     <Compile Include="Package\Header.cs" />
+    <Compile Include="Package\HeartBeatPack.cs" />
     <Compile Include="Package\Pack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Client.cs" />
     <Compile Include="Service\HandShake\HandShakeManager.cs" />
+    <Compile Include="Service\Ping\PingCalculator.cs" />
+    <Compile Include="Service\HeartBeat\HeartBeatManager.cs" />
     <Compile Include="Service\Processor\Consts.cs" />
     <Compile Include="Service\Processor\RecvProcessor.cs" />
     <Compile Include="Service\Processor\SendProcessor.cs" />
@@ -72,8 +76,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\HeartBeat\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

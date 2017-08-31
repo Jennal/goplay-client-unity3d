@@ -6,6 +6,7 @@ using GoPlay.Encode.Json;
 using GoPlay.Service;
 using GoPlay.Transfer.Tcp;
 using GoPlay.Package;
+using System.Threading;
 
 namespace TestConsole
 {
