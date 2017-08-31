@@ -6,6 +6,7 @@ using GoPlay.Transfer;
 using GoPlay.Helper;
 using System.IO;
 using GoPlay.Helper.Extensions;
+using GoPlay.Encode.Factory;
 
 namespace GoPlay.Service.Processor
 {
@@ -22,11 +23,10 @@ namespace GoPlay.Service.Processor
         private bool m_processing = false;
         private MemoryStream m_bufferStream = new MemoryStream();
 
-        public RecvProcessor(SendProcessor sender, ITransfer transfer, IEncoder encoder)
+        public RecvProcessor(SendProcessor sender, ITransfer transfer)
         {
             m_sendProcessor = sender;
             m_transfer = transfer;
-            m_encoder = encoder;
         }
 
         private void recvHeartBeat(Pack pack) {
@@ -39,14 +39,16 @@ namespace GoPlay.Service.Processor
         }
 
         private void recvPush(Pack pack) {
-            m_pushEventDispatcher.Emit(pack.Header.Route, m_encoder, pack.Data);
+            var encoder = EncoderFactory.Create(pack.Header.Encoding);
+            m_pushEventDispatcher.Emit(pack.Header.Route, encoder, pack.Data);
         }
 
         private void recvResponse(Pack pack) {
-            if(pack.Header.Status == Status.STAT_OK) {
-                m_requestSuccessEventDispatcher.Emit(pack.Header.ID, m_encoder, pack.Data);
+            var encoder = EncoderFactory.Create(pack.Header.Encoding);
+            if (pack.Header.Status == Status.STAT_OK) {
+                m_requestSuccessEventDispatcher.Emit(pack.Header.ID, encoder, pack.Data);
             } else {
-                m_requestFailedEventDispatcher.Emit(pack.Header.ID, m_encoder, pack.Data);
+                m_requestFailedEventDispatcher.Emit(pack.Header.ID, encoder, pack.Data);
             }
         }
 

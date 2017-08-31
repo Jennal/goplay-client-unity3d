@@ -47,7 +47,7 @@ namespace GoPlay.Service
 		public Client()
 		{
 			m_sendProcessor = new SendProcessor(m_transfer, m_encoder);
-			m_recvProcessor = new RecvProcessor(m_sendProcessor, m_transfer, m_encoder);
+			m_recvProcessor = new RecvProcessor(m_sendProcessor, m_transfer);
 
 			m_transfer.OnConnected += HandleConnected;
 			m_transfer.OnDisconnected += HandleDisconnected;
