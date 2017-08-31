@@ -10,13 +10,14 @@ namespace GoPlay.Helper
         }
 
         public int Next() {
+            var next = m_current;
             if(m_current == Max) {
                 m_current = 0;
             } else {
                 m_current++;
             }
 
-            return m_current;
+            return next;
         }
     }
 }

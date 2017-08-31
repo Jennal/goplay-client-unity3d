@@ -11,25 +11,32 @@ namespace TestConsole
 {
     class Program
     {
+        static Client<Tcp, JsonEncoder> client = new Client<Tcp, JsonEncoder>();
+
         static void Main(string[] args)
         {
-            var client = new Client<Tcp, JsonEncoder>();
             client.OnError += Client_OnError;
             client.OnDisconnected += Client_OnDisconnected;
+            client.OnConnected += Client_OnConnected;
 
             client.On("echo.push", client, (string str) =>
             {
                 Console.WriteLine("On Push: {0}", str);
             });
-            client.Connect("192.168.1.200", 1234);
+            client.Connect("", 1234);
+            
+            Console.ReadKey();
+        }
 
-            for (int i = 0; i < 10000; i++)
+        private static void Client_OnConnected(GoPlay.Transfer.ITransfer obj)
+        {
+            for (int i = 0; i < 10; i++)
             {
-                if (i == 10)
-                {
-                    client.Disconnect();
-                    break;
-                }
+                //if (i == 10)
+                //{
+                //    client.Disconnect();
+                //    break;
+                //}
 
                 client.Notify("echo.services.notify", "Notify from client: " + i);
 
@@ -41,8 +48,6 @@ namespace TestConsole
                     Console.WriteLine("Request Error: {0}", err);
                 });
             }
-
-            Console.ReadKey();
         }
 
         private static void Client_OnDisconnected(GoPlay.Transfer.ITransfer obj)

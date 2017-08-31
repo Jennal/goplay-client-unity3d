@@ -7,14 +7,15 @@ using GoPlay.Helper;
 using System.IO;
 using GoPlay.Helper.Extensions;
 using GoPlay.Encode.Factory;
+using GoPlay.Service.HandShake;
 
 namespace GoPlay.Service.Processor
 {
     public class RecvProcessor
     {
         private SendProcessor m_sendProcessor;
+        private HandShakeManager m_handShakeManager;
         private ITransfer m_transfer;
-        private IEncoder m_encoder;
         
 		private EventDispatcher<byte> m_requestSuccessEventDispatcher = new EventDispatcher<byte>();
 		private EventDispatcher<byte> m_requestFailedEventDispatcher = new EventDispatcher<byte>();
@@ -23,9 +24,10 @@ namespace GoPlay.Service.Processor
         private bool m_processing = false;
         private MemoryStream m_bufferStream = new MemoryStream();
 
-        public RecvProcessor(SendProcessor sender, ITransfer transfer)
+        public RecvProcessor(SendProcessor sender, HandShakeManager manager, ITransfer transfer)
         {
             m_sendProcessor = sender;
+            m_handShakeManager = manager;
             m_transfer = transfer;
         }
 
@@ -52,6 +54,11 @@ namespace GoPlay.Service.Processor
             }
         }
 
+        private void recvHandShakeResponse(Pack pack)
+        {
+            m_handShakeManager.RecvResponse(pack);
+        }
+
         private void recvPack(Pack pack) {
             switch(pack.Header.Type) {
                 case PackageType.PKG_HEARTBEAT:
@@ -65,6 +72,9 @@ namespace GoPlay.Service.Processor
                     break;
                 case PackageType.PKG_RESPONSE:
                     recvResponse(pack);
+                    break;
+                case PackageType.PKG_HAND_SHAKE_RESPONSE:
+                    recvHandShakeResponse(pack);
                     break;
                 default:
                     break;

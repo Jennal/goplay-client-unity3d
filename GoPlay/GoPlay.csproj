@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Consts.cs" />
+    <Compile Include="Config\GlobalData.cs" />
     <Compile Include="Encode\Factory\EncoderFactory.cs" />
     <Compile Include="Encode\Interface\IEncoder.cs" />
     <Compile Include="Encode\Json\JsonEncoder.cs" />
@@ -52,12 +54,15 @@
     <Compile Include="Helper\DebugHelper.cs" />
     <Compile Include="Helper\Extensions\MemoryStreamExtension.cs" />
     <Compile Include="Helper\IDHelper.cs" />
+    <Compile Include="Helper\Md5Helper.cs" />
     <Compile Include="Package\Enum.cs" />
     <Compile Include="Package\ErrorMessage.cs" />
+    <Compile Include="Package\HandShake.cs" />
     <Compile Include="Package\Header.cs" />
     <Compile Include="Package\Pack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Client.cs" />
+    <Compile Include="Service\HandShake\HandShakeManager.cs" />
     <Compile Include="Service\Processor\Consts.cs" />
     <Compile Include="Service\Processor\RecvProcessor.cs" />
     <Compile Include="Service\Processor\SendProcessor.cs" />
@@ -66,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\HeartBeat\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

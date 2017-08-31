@@ -3,6 +3,7 @@ using GoPlay.Encode.Interface;
 using GoPlay.Package;
 using GoPlay.Transfer;
 using System.IO;
+using System.Collections.Generic;
 
 namespace GoPlay.Service.Processor
 {
@@ -10,7 +11,7 @@ namespace GoPlay.Service.Processor
     {
         private ITransfer m_transfer;
         private IEncoder m_encoder;
-
+        
         public SendProcessor(ITransfer transfer, IEncoder encoder)
         {
             m_transfer = transfer;
@@ -25,13 +26,12 @@ namespace GoPlay.Service.Processor
                 throw new Exception(string.Format("data size exceed max length: {0} > {1}", buffer.Length, UInt16.MaxValue));
             }
 
-            var header = new Header()
+            var header = new Header(route)
             {
                 Type = t,
                 Encoding = m_encoder.Encoding,
                 Status = Status.STAT_OK,
                 ContentSize = (UInt16)buffer.Length,
-                Route = route
             };
 
             return new Pack(header, buffer);
@@ -61,7 +61,6 @@ namespace GoPlay.Service.Processor
 
         public void Start()
         {
-
         }
 
         public void Reset()

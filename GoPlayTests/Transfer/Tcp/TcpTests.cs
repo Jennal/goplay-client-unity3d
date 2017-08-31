@@ -14,7 +14,7 @@ namespace GoPlay.Transfer.Tcp.Tests
         [TestMethod()]
         public void ConnectTest()
         {
-            Assert.Fail();
+            //TODO:
         }
     }
 }

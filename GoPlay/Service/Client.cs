@@ -4,6 +4,7 @@ using GoPlay.Transfer;
 using GoPlay.Package;
 using GoPlay.Service.Processor;
 using GoPlay.Helper;
+using GoPlay.Service.HandShake;
 
 namespace GoPlay.Service
 {
@@ -16,15 +17,12 @@ namespace GoPlay.Service
 
 		private SendProcessor m_sendProcessor;
 		private RecvProcessor m_recvProcessor;
+        private HandShakeManager m_handShakeManager;
 
-		public event Action<ITransfer> OnConnected {
-			add {
-				m_transfer.OnConnected += value;
-			}
-			remove {
-				m_transfer.OnConnected -= value;
-			}
-		}
+        private bool m_isHandShaked = false;
+        public bool Connected => m_transfer.Connected && m_isHandShaked;
+
+        public event Action<ITransfer> OnConnected;
 
 		public event Action<ITransfer> OnDisconnected {
 			add {
@@ -47,21 +45,35 @@ namespace GoPlay.Service
 		public Client()
 		{
 			m_sendProcessor = new SendProcessor(m_transfer, m_encoder);
-			m_recvProcessor = new RecvProcessor(m_sendProcessor, m_transfer);
+            m_handShakeManager = new HandShakeManager(m_sendProcessor);
+            m_recvProcessor = new RecvProcessor(m_sendProcessor, m_handShakeManager, m_transfer);
 
 			m_transfer.OnConnected += HandleConnected;
 			m_transfer.OnDisconnected += HandleDisconnected;
 		}
 
+        private void OnConnectedEvent(ITransfer transfer)
+        {
+            if (OnConnected == null) return;
+            OnConnected(transfer);
+        }
+
         private void HandleConnected(ITransfer transfer)
         {
-			Debug.Log("OnConnected");
+            m_handShakeManager.SendRequest(() =>
+            {
+                m_isHandShaked = true;
+                Debug.Log("OnConnected");
+                OnConnectedEvent(transfer);
+            });
+
             m_sendProcessor.Start();
 			m_recvProcessor.Start();
         }
         private void HandleDisconnected(ITransfer obj)
         {
-			Debug.Log("OnDisconnected");
+            m_isHandShaked = false;
+            Debug.Log("OnDisconnected");
 			m_sendProcessor.Reset();
 			m_recvProcessor.Reset();
         }
