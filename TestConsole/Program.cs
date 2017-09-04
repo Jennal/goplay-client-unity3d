@@ -7,6 +7,8 @@ using GoPlay.Service;
 using GoPlay.Transfer.Tcp;
 using GoPlay.Package;
 using System.Threading;
+using GoPlay.Transfer;
+using TestConsole.Login;
 
 namespace TestConsole
 {
@@ -14,18 +16,45 @@ namespace TestConsole
     {
         static Client<Tcp, JsonEncoder> client = new Client<Tcp, JsonEncoder>();
 
+        static void TestLogin()
+        {
+            TestGuestLogin();
+            TestUserLogin();
+        }
+
+        private static void TestUserLogin()
+        {
+            
+        }
+
+        private static void TestGuestLogin()
+        {
+            client.OnConnected += (ITransfer transfer)=> {
+                client.Request("login.guest.register", new RegistGuestRequest { }, (LoginResponse resp) =>
+                {
+                    Console.WriteLine("Success: {0}, {1}", resp.UserToken, resp.Power);
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
+            client.Connect("", 24680);
+        }
+
         static void Main(string[] args)
         {
             client.OnError += Client_OnError;
-            client.OnDisconnected += Client_OnDisconnected;
-            client.OnConnected += Client_OnConnected;
+            TestLogin();
 
-            client.On("echo.push", client, (string str) =>
-            {
-                Console.WriteLine("On Push: {0}", str);
-            });
-            client.Connect("", 1234);
-            
+            //client.OnDisconnected += Client_OnDisconnected;
+            //client.OnConnected += Client_OnConnected;
+
+            //client.On("echo.push", client, (string str) =>
+            //{
+            //    Console.WriteLine("On Push: {0}", str);
+            //});
+            //client.Connect("", 1234);
+
             Console.ReadKey();
         }
 
