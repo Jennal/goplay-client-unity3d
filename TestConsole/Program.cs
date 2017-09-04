@@ -38,7 +38,7 @@ namespace TestConsole
                     Console.WriteLine("Failed: {0}, {1}", err.Code, err.Message);
                 });
             };
-            client.Connect("", 24680);
+            client.Connect("192.168.1.200", 24680);
         }
 
         static void Main(string[] args)
