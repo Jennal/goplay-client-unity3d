@@ -24,36 +24,92 @@ namespace TestConsole
 
         private static void TestUserLogin()
         {
-            
-        }
+            var userName = "jennal1";
+            var passWord = "1234";
 
-        private static void TestGuestLogin()
-        {
-            client.OnConnected += (ITransfer transfer)=> {
-                client.Request("login.guest.register", new RegistGuestRequest { }, (LoginResponse resp) =>
+            client.OnConnected += (ITransfer transfer) =>
+            {
+                client.Request("login.user.checkusername", "abcd", (bool resp) =>
                 {
-                    Console.WriteLine("Success: {0}, {1}", resp.UserToken, resp.Power);
+                    Console.WriteLine("Success: {0}", resp);
                 }, (ErrorMessage err) =>
                 {
                     Console.WriteLine("Failed: {0}, {1}", err.Code, err.Message);
                 });
+
+                client.Request("login.user.register", new LoginRequest {
+                    Username = userName,
+                    Password = passWord
+                }, (LoginResponse resp) =>
+                {
+                    Console.WriteLine("login.user.register Success: {0}, {1}", resp.UserToken, resp.Power);
+                    client.Request("login.user.loginbytoken", new LoginTokenRequest
+                    {
+                        UserToken = resp.UserToken
+                    }, (LoginResponse loginResp) =>
+                    {
+                        Console.WriteLine("login.user.loginbytoken Success: {0}, {1}", resp.UserToken, resp.Power);
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("login.user.loginbytoken Failed: {0}, {1}", err.Code, err.Message);
+                    });
+
+                    client.Request("login.user.login", new LoginRequest
+                    {
+                        Username = userName,
+                        Password = passWord
+                    }, (LoginResponse loginResp) =>
+                    {
+                        Console.WriteLine("login.user.login Success: {0}, {1}", resp.UserToken, resp.Power);
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("login.user.login Failed: {0}, {1}", err.Code, err.Message);
+                    });
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("login.user.register Failed: {0}, {1}", err.Code, err.Message);
+                });
             };
-            client.Connect("192.168.1.200", 24680);
+        }
+
+        private static void TestGuestLogin()
+        {
+            client.OnConnected += (ITransfer transfer) =>
+            {
+                client.Request("login.guest.register", new RegistGuestRequest { }, (LoginResponse resp) =>
+                {
+                    Console.WriteLine("login.guest.register Success: {0}, {1}", resp.UserToken, resp.Power);
+                    client.Request("login.guest.login", new LoginTokenRequest
+                    {
+                        UserToken = resp.UserToken
+                    }, (LoginResponse loginResp) =>
+                    {
+                        Console.WriteLine("login.guest.login Success: {0}, {1}", resp.UserToken, resp.Power);
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("login.guest.login Failed: {0}, {1}", err.Code, err.Message);
+                    });
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("login.guest.register Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
         }
 
         static void Main(string[] args)
         {
             client.OnError += Client_OnError;
-            TestLogin();
+            //TestLogin();
+            //client.Connect("192.168.1.200", 24680);
 
-            //client.OnDisconnected += Client_OnDisconnected;
-            //client.OnConnected += Client_OnConnected;
+            client.OnDisconnected += Client_OnDisconnected;
+            client.OnConnected += Client_OnConnected;
 
-            //client.On("echo.push", client, (string str) =>
-            //{
-            //    Console.WriteLine("On Push: {0}", str);
-            //});
-            //client.Connect("", 1234);
+            client.On("echo.push", client, (string str) =>
+            {
+                Console.WriteLine("On Push: {0}", str);
+            });
+            client.Connect("", 1234);
 
             Console.ReadKey();
         }
