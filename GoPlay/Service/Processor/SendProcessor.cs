@@ -18,10 +18,9 @@ namespace GoPlay.Service.Processor
             m_transfer = transfer;
             m_encoder = encoder;
         }
-
-        public Pack CreatePack<T>(string route, T data, PackageType t)
+        
+        internal Pack CreatePackRaw(string route, byte[] buffer, PackageType t)
         {
-            var buffer = m_encoder.Encode(data);
             if (buffer.Length > UInt16.MaxValue)
             {
                 throw new Exception(string.Format("data size exceed max length: {0} > {1}", buffer.Length, UInt16.MaxValue));
@@ -38,12 +37,18 @@ namespace GoPlay.Service.Processor
             return new Pack(header, buffer);
         }
 
+        public Pack CreatePack<T>(string route, T data, PackageType t)
+        {
+            var buffer = m_encoder.Encode(data);
+            return CreatePackRaw(route, buffer, t);
+        }
+
         public void Send<T>(string route, T data, PackageType t)
         {
             var pack = CreatePack(route, data, t);
             Send(pack);
         }
-
+        
         public void Send(Pack pack)
         {
             // Debug.LogFormat(" <= Header: {0}", header.ToString());

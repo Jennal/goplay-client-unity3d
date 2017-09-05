@@ -46,13 +46,13 @@ namespace GoPlay.Service.Processor
 
         private void recvPush(Pack pack) {
             var encoder = EncoderFactory.Create(pack.Header.Encoding);
-            m_pushEventDispatcher.Emit(pack.Header.Route, encoder, pack.Data);
+            m_pushEventDispatcher.Emit(pack.Header.Route, pack);
         }
 
         private void recvResponse(Pack pack) {
             var encoder = EncoderFactory.Create(pack.Header.Encoding);
             if (pack.Header.Status == Status.STAT_OK) {
-                m_requestSuccessEventDispatcher.Emit(pack.Header.ID, encoder, pack.Data);
+                m_requestSuccessEventDispatcher.Emit(pack.Header.ID, pack);
             } else {
                 m_requestFailedEventDispatcher.Emit(pack.Header.ID, encoder, pack.Data);
             }
@@ -158,19 +158,44 @@ namespace GoPlay.Service.Processor
             m_requestFailedEventDispatcher.Clear();
         }
 
+        internal void RegistRequestCallbackRaw(byte id, Action<Pack> succCallback, Action<ErrorMessage> failedCallback)
+        {
+            m_requestSuccessEventDispatcher.Once(id, this, (Pack pack) => {
+                m_requestFailedEventDispatcher.Off(id, this);
+                succCallback(pack);
+            });
+            m_requestFailedEventDispatcher.Once(id, this, (ErrorMessage o) => {
+                m_requestSuccessEventDispatcher.Off(id, this);
+                failedCallback(o);
+            });
+        }
+
         public void RegistRequestCallback<RT>(byte id, Action<RT> succCallback, Action<ErrorMessage> failedCallback) {
-            m_requestSuccessEventDispatcher.Once(id, this, (RT o) => {
-				m_requestFailedEventDispatcher.Off(id, this);
-				succCallback(o);
-			});
-			m_requestFailedEventDispatcher.Once(id, this, (ErrorMessage o) => {
-				m_requestSuccessEventDispatcher.Off(id, this);
-				failedCallback(o);
-			});
+            RegistRequestCallbackRaw(id, (Pack pack) =>
+            {
+                var encoder = EncoderFactory.Create(pack.Header.Encoding);
+                var cb = new EventCallback(this, succCallback, typeof(RT));
+                cb.Call(encoder, pack.Data);
+            }, failedCallback);
+        }
+
+        internal void OnRaw<RT>(string evt, RT recvObj, Action<Pack> callback)
+        {
+            m_pushEventDispatcher.On(evt, recvObj, callback);
+        }
+        
+        internal void OnceRaw<RT>(string evt, RT recvObj, Action<Pack> callback)
+        {
+            m_pushEventDispatcher.Once(evt, recvObj, callback);
         }
 
         public void On<RT, T>(string evt, RT recvObj, Action<T> callback) {
-			m_pushEventDispatcher.On(evt, recvObj, callback);
+			OnRaw(evt, recvObj, (Pack pack) =>
+            {
+                var encoder = EncoderFactory.Create(pack.Header.Encoding);
+                var cb = new EventCallback(this, callback, typeof(T));
+                cb.Call(encoder, pack.Data);
+            });
         }
 
         public void Off<RT>(string evt, RT recvObj) {
@@ -178,7 +203,12 @@ namespace GoPlay.Service.Processor
         }
 
         public void Once<RT, T>(string evt, RT recvObj, Action<T> callback) {
-            m_pushEventDispatcher.Once(evt, recvObj, callback);
+            OnceRaw(evt, recvObj, (Pack pack) =>
+            {
+                var encoder = EncoderFactory.Create(pack.Header.Encoding);
+                var cb = new EventCallback(this, callback, typeof(T));
+                cb.Call(encoder, pack.Data);
+            });
         }
     }
 }

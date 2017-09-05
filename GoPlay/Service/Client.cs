@@ -10,15 +10,15 @@ using GoPlay.Service.Ping;
 
 namespace GoPlay.Service
 {
-	public class Client<TTransfer, TEncoder>
-		where TTransfer : ITransfer, new()
-		where TEncoder : IEncoder, new()
-	{
-		private TTransfer m_transfer = new TTransfer();
-		private TEncoder m_encoder = new TEncoder();
+    public class Client<TTransfer, TEncoder>
+        where TTransfer : ITransfer, new()
+        where TEncoder : IEncoder, new()
+    {
+        private TTransfer m_transfer = new TTransfer();
+        private TEncoder m_encoder = new TEncoder();
 
-		private SendProcessor m_sendProcessor;
-		private RecvProcessor m_recvProcessor;
+        private SendProcessor m_sendProcessor;
+        private RecvProcessor m_recvProcessor;
         private HandShakeManager m_handShakeManager;
         private HeartBeatManager m_heartBeatManager;
 
@@ -29,34 +29,40 @@ namespace GoPlay.Service
 
         public event Action<ITransfer> OnConnected;
 
-		public event Action<ITransfer> OnDisconnected {
-			add {
-				m_transfer.OnDisconnected += value;
-			}
-			remove {
-				m_transfer.OnDisconnected -= value;
-			}
-		}
+        public event Action<ITransfer> OnDisconnected
+        {
+            add
+            {
+                m_transfer.OnDisconnected += value;
+            }
+            remove
+            {
+                m_transfer.OnDisconnected -= value;
+            }
+        }
 
-		public event Action<Exception> OnError {
-			add {
-				m_transfer.OnError += value;
-			}
-			remove {
-				m_transfer.OnError -= value;
-			}
-		}
+        public event Action<Exception> OnError
+        {
+            add
+            {
+                m_transfer.OnError += value;
+            }
+            remove
+            {
+                m_transfer.OnError -= value;
+            }
+        }
 
-		public Client()
-		{
-			m_sendProcessor = new SendProcessor(m_transfer, m_encoder);
+        public Client()
+        {
+            m_sendProcessor = new SendProcessor(m_transfer, m_encoder);
             m_handShakeManager = new HandShakeManager(m_sendProcessor);
             m_heartBeatManager = new HeartBeatManager(m_sendProcessor);
             m_recvProcessor = new RecvProcessor(m_sendProcessor, m_handShakeManager, m_heartBeatManager, m_transfer);
 
-			m_transfer.OnConnected += HandleConnected;
-			m_transfer.OnDisconnected += HandleDisconnected;
-		}
+            m_transfer.OnConnected += HandleConnected;
+            m_transfer.OnDisconnected += HandleDisconnected;
+        }
 
         private void OnConnectedEvent(ITransfer transfer)
         {
@@ -76,52 +82,92 @@ namespace GoPlay.Service
             });
 
             m_sendProcessor.Start();
-			m_recvProcessor.Start();
+            m_recvProcessor.Start();
         }
         private void HandleDisconnected(ITransfer obj)
         {
             m_isHandShaked = false;
             Debug.Log("OnDisconnected");
             m_heartBeatManager.Reset();
-			m_sendProcessor.Reset();
-			m_recvProcessor.Reset();
+            m_sendProcessor.Reset();
+            m_recvProcessor.Reset();
         }
 
         #region Connection
-        public void Connect(string host, int port) {
-			m_transfer.Connect(host, port);
-		}
-
-		public void Disconnect() {
-			m_transfer.Disconnect();
-		}
-		#endregion
-
-		#region Request
-
-		public void Request<T, RT>(string route, T data, Action<RT> succCallback, Action<ErrorMessage> failedCallback) {
-			var pack = m_sendProcessor.CreatePack(route, data, PackageType.PKG_REQUEST);
-			var id = pack.Header.ID;
-			m_recvProcessor.RegistRequestCallback(id, succCallback, failedCallback);
-
-			m_sendProcessor.Send(pack);
-		}
-
-		public void Notify<T>(string route, T data) {
-			m_sendProcessor.Send(route, data, PackageType.PKG_NOTIFY);
-		}
-
-		#region Push
-		public void On<RT, T>(string evt, RT recvObj, Action<T> callback) {
-			m_recvProcessor.On(evt, recvObj, callback);
+        public void Connect(string host, int port)
+        {
+            m_transfer.Connect(host, port);
         }
 
-        public void Off<RT>(string evt, RT recvObj) {
+        public void Disconnect()
+        {
+            m_transfer.Disconnect();
+        }
+        #endregion
+
+        #region Request
+
+        public void Request<T, RT>(string route, T data, Action<RT> succCallback, Action<ErrorMessage> failedCallback)
+        {
+            var pack = m_sendProcessor.CreatePack(route, data, PackageType.PKG_REQUEST);
+            var id = pack.Header.ID;
+            m_recvProcessor.RegistRequestCallback(id, succCallback, failedCallback);
+
+            m_sendProcessor.Send(pack);
+        }
+
+        public void Notify<T>(string route, T data)
+        {
+            m_sendProcessor.Send(route, data, PackageType.PKG_NOTIFY);
+        }
+
+        #region Push
+        public void On<RT, T>(string evt, RT recvObj, Action<T> callback)
+        {
+            m_recvProcessor.On(evt, recvObj, callback);
+        }
+
+        public void Off<RT>(string evt, RT recvObj)
+        {
             m_recvProcessor.Off(evt, recvObj);
         }
 
-        public void Once<RT, T>(string evt, RT recvObj, Action<T> callback) {
+        public void Once<RT, T>(string evt, RT recvObj, Action<T> callback)
+        {
             m_recvProcessor.Once(evt, recvObj, callback);
+        }
+        #endregion
+        #endregion
+
+        #region RawRequest
+        public void RequestRaw(string route, byte[] data, Action<Pack> succCallback, Action<ErrorMessage> failedCallback)
+        {
+            var pack = m_sendProcessor.CreatePackRaw(route, data, PackageType.PKG_REQUEST);
+            var id = pack.Header.ID;
+            m_recvProcessor.RegistRequestCallbackRaw(id, succCallback, failedCallback);
+
+            m_sendProcessor.Send(pack);
+        }
+
+        public void NotifyRaw(string route, byte[] data)
+        {
+            m_sendProcessor.Send(route, data, PackageType.PKG_NOTIFY);
+        }
+
+        #region Push
+        public void OnRaw<RT>(string evt, RT recvObj, Action<Pack> callback)
+        {
+            m_recvProcessor.OnRaw(evt, recvObj, callback);
+        }
+
+        public void OffRaw<RT>(string evt, RT recvObj)
+        {
+            m_recvProcessor.Off(evt, recvObj);
+        }
+
+        public void OnceRaw<RT>(string evt, RT recvObj, Action<Pack> callback)
+        {
+            m_recvProcessor.OnceRaw(evt, recvObj, callback);
         }
         #endregion
         #endregion
