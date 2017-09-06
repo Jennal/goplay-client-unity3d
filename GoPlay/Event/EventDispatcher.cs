@@ -37,8 +37,8 @@ namespace GoPlay.Event
 
         public void Once<RT, T>(TEventName evt, RT recvObj, Action<T> callback) {
             On<RT, T>(evt, recvObj, o => {
-                callback(o);
                 Off(evt, recvObj);
+                callback(o);
             });
         }
 
