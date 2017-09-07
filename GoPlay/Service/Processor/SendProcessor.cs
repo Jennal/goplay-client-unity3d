@@ -19,7 +19,7 @@ namespace GoPlay.Service.Processor
             m_encoder = encoder;
         }
         
-        internal Pack CreatePackRaw(string route, byte[] buffer, PackageType t)
+        internal Pack CreatePackRaw(string route, byte[] buffer, PackageType t, EncodingType e)
         {
             if (buffer.Length > UInt16.MaxValue)
             {
@@ -29,7 +29,7 @@ namespace GoPlay.Service.Processor
             var header = new Header(route)
             {
                 Type = t,
-                Encoding = m_encoder.Encoding,
+                Encoding = e,
                 Status = Status.STAT_OK,
                 ContentSize = (UInt16)buffer.Length,
             };
@@ -40,7 +40,7 @@ namespace GoPlay.Service.Processor
         public Pack CreatePack<T>(string route, T data, PackageType t)
         {
             var buffer = m_encoder.Encode(data);
-            return CreatePackRaw(route, buffer, t);
+            return CreatePackRaw(route, buffer, t, m_encoder.Encoding);
         }
 
         public void Send<T>(string route, T data, PackageType t)

@@ -14,8 +14,20 @@ namespace GoPlay.Service.HeartBeat
         private SendProcessor m_sendProcessor;
         private PingCalculator m_pingCalculator = new PingCalculator();
 
-        public int AveragePing => m_pingCalculator.AveragePing;
-        public int LastPing => m_pingCalculator.LastPing;
+        public int AveragePing
+        {
+            get
+            {
+                return m_pingCalculator.AveragePing;
+            }
+        }
+        public int LastPing
+        {
+            get
+            {
+                return m_pingCalculator.LastPing;
+            }
+        }
 
         public event Action OnTimeOut;
 
@@ -36,9 +48,9 @@ namespace GoPlay.Service.HeartBeat
         {
             m_pingCalculator.Recv(pack.Header.ID);
             //Debug.Log(m_pingCalculator.ToString());
-            if(m_pingCalculator.LostCount > GlobalHandShakeData.GetHeartBeatMaxLostTimes())
+            if (m_pingCalculator.LostCount > GlobalHandShakeData.GetHeartBeatMaxLostTimes())
             {
-                OnTimeOut?.Invoke();
+                if (OnTimeOut != null) OnTimeOut.Invoke();
             }
         }
 

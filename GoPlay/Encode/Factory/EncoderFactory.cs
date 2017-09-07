@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using GoPlay.Encode.Interface;
 using GoPlay.Package;
+using GoPlay.Encode.Json;
 
 namespace GoPlay.Encode.Factory
 {
     public static class EncoderFactory
     {
         private static Dictionary<EncodingType, IEncoder> s_dict = new Dictionary<EncodingType, IEncoder>();
+
+        static EncoderFactory()
+        {
+            Regist(EncodingType.ENCODING_JSON, new JsonEncoder());
+        }
 
         public static void Regist(EncodingType encoding, IEncoder encoder) {
             s_dict[encoding] = encoder;

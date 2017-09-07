@@ -13,6 +13,9 @@ namespace GoPlay.Transfer.Tcp
 
         private byte[] m_buffer = new byte[1024];
 
+        private string m_connectedHost;
+        private int m_connectedPort;
+
         private TcpClient m_tcpClient;
         public NetworkStream Stream
         {
@@ -70,8 +73,13 @@ namespace GoPlay.Transfer.Tcp
 
         public void Connect(string host, int port)
         {
+            if (host == m_connectedHost && port == m_connectedPort) return;
+
             try
             {
+                m_connectedHost = host;
+                m_connectedPort = port;
+
                 if (m_tcpClient == null) m_tcpClient = new TcpClient();
 
                 m_tcpClient.Connect(host, port);

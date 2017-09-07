@@ -5,9 +5,9 @@ namespace GoPlay.Event
 {
     public class EventCallback
     {
-        public object Reciever { get; }
-        public object Callback { get; }
-        public Type CallbackParamType { get; }
+        public object Reciever { get; private set; }
+        public object Callback { get; private set; }
+        public Type CallbackParamType { get; private set; }
 
         public EventCallback(object recvObj, object cb, Type t) {
             Reciever = recvObj;

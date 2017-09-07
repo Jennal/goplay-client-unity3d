@@ -2,7 +2,7 @@ namespace GoPlay.Helper
 {
     public class IDHelper
     {
-        public int Max { get; }
+        public int Max { get; private set; }
         private int m_current = 0;
         public IDHelper(int max)
         {

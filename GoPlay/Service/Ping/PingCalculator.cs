@@ -92,7 +92,7 @@ namespace GoPlay.Service.Ping
             LastPing = last;
             AveragePing = (int)((double)AveragePing - (double)AveragePing / m_totalCount + (double)LastPing / m_totalCount);
 
-            Debug.Log(ToString());
+            // Debug.Log(ToString());
         }
 
         public override string ToString()

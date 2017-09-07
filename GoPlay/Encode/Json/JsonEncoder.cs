@@ -9,10 +9,6 @@ namespace GoPlay.Encode.Json
 {
     public class JsonEncoder : IEncoder
     {
-        static JsonEncoder() {
-            EncoderFactory.Regist(EncodingType.ENCODING_JSON, new JsonEncoder());
-        }
-
 		public EncodingType Encoding {
 			get {
 				return EncodingType.ENCODING_JSON;

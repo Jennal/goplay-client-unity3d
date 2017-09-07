@@ -64,6 +64,7 @@
     <Compile Include="Package\Pack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Client.cs" />
+    <Compile Include="Service\ClientRaw.cs" />
     <Compile Include="Service\HandShake\HandShakeManager.cs" />
     <Compile Include="Service\Ping\PingCalculator.cs" />
     <Compile Include="Service\HeartBeat\HeartBeatManager.cs" />

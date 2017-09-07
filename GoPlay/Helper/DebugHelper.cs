@@ -8,7 +8,7 @@ namespace GoPlay.Helper
         public static void Log(string format)
         {
 #if UNITY_EDITOR
-            Debug.Log(format);
+            UnityEngine.Debug.Log(format);
 #else
             Console.WriteLine(format);
 #endif
@@ -17,7 +17,7 @@ namespace GoPlay.Helper
         public static void Log(string format, params object[] args)
         {
 #if UNITY_EDITOR
-            Debug.LogFormat(format, args);
+            UnityEngine.Debug.LogFormat(format, args);
 #else
             Console.WriteLine(string.Format(format, args));
 #endif
@@ -26,7 +26,7 @@ namespace GoPlay.Helper
         public static void Error(string format)
         {
 #if UNITY_EDITOR
-            Debug.LogError(format);
+            UnityEngine.Debug.LogError(format);
 #else
             Console.WriteLine(format);
 #endif
@@ -35,7 +35,7 @@ namespace GoPlay.Helper
         public static void Error(string format, params object[] args)
         {
 #if UNITY_EDITOR
-            Debug.LogErrorFormat(format, args);
+            UnityEngine.Debug.LogErrorFormat(format, args);
 #else
             Console.WriteLine(string.Format(format, args));
 #endif
