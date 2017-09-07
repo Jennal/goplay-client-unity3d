@@ -132,9 +132,9 @@ namespace GoPlay.Service
             return action;
         }
 
-        public void Request(string route, byte[] data, EncodingType e, Action<Pack> succCallback, Action<ErrorMessage> failedCallback)
+        public void Request(string route, byte[] data, Action<Pack> succCallback, Action<ErrorMessage> failedCallback)
         {
-            var pack = m_sendProcessor.CreatePackRaw(route, data, PackageType.PKG_REQUEST, e);
+            var pack = m_sendProcessor.CreatePackRaw(route, data, PackageType.PKG_REQUEST, m_encoder.Encoding);
             var id = pack.Header.ID;
             m_recvProcessor.RegistRequestCallbackRaw(id, getMainThreadAction(succCallback), getMainThreadAction(failedCallback));
 
@@ -143,7 +143,8 @@ namespace GoPlay.Service
 
         public void Notify(string route, byte[] data)
         {
-            m_sendProcessor.Send(route, data, PackageType.PKG_NOTIFY);
+            var pack = m_sendProcessor.CreatePackRaw(route, data, PackageType.PKG_NOTIFY, m_encoder.Encoding);
+            m_sendProcessor.Send(pack);
         }
 
         #region Push
