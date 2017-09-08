@@ -40,7 +40,7 @@ namespace GoPlay.Service
 
         public void Request<RT>(string route, Action<RT> succCallback, Action<ErrorMessage> failedCallback)
         {
-            base.Request(route, null, (Pack pack) =>
+            base.Request(route, (Pack pack) =>
             {
                 Call(pack, succCallback);
             }, failedCallback);
@@ -50,11 +50,6 @@ namespace GoPlay.Service
         {
             var buffer = m_encoder.Encode(data);
             base.Notify(route, buffer);
-        }
-
-        public void Notify<T>(string route)
-        {
-            base.Notify(route, null);
         }
 
         #region Push

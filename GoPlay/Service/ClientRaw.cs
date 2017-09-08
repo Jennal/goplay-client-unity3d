@@ -141,10 +141,20 @@ namespace GoPlay.Service
             m_sendProcessor.Send(pack);
         }
 
+        public void Request(string route, Action<Pack> succCallback, Action<ErrorMessage> failedCallback)
+        {
+            Request(route, null, succCallback, failedCallback);
+        }
+
         public void Notify(string route, byte[] data)
         {
             var pack = m_sendProcessor.CreatePackRaw(route, data, PackageType.PKG_NOTIFY, m_encoder.Encoding);
             m_sendProcessor.Send(pack);
+        }
+
+        public void Notify(string route)
+        {
+            Notify(route, null);
         }
 
         #region Push
