@@ -17,15 +17,15 @@ namespace GoPlay.Service
     public class Client<TTransfer>
         where TTransfer : ITransfer, new()
     {
-        private TTransfer m_transfer = new TTransfer();
-        private IEncoder m_encoder;
+        protected TTransfer m_transfer = new TTransfer();
+        protected IEncoder m_encoder;
 
-        private SendProcessor m_sendProcessor;
-        private RecvProcessor m_recvProcessor;
-        private HandShakeManager m_handShakeManager;
-        private HeartBeatManager m_heartBeatManager;
+        protected SendProcessor m_sendProcessor;
+        protected RecvProcessor m_recvProcessor;
+        protected HandShakeManager m_handShakeManager;
+        protected HeartBeatManager m_heartBeatManager;
 
-        private bool m_isHandShaked = false;
+        protected bool m_isHandShaked = false;
         public bool Connected
         {
             get
@@ -84,7 +84,7 @@ namespace GoPlay.Service
             OnError(err);
         }
 
-        private void HandleConnected(ITransfer transfer)
+        protected void HandleConnected(ITransfer transfer)
         {
             m_handShakeManager.Send(() =>
             {
@@ -98,7 +98,7 @@ namespace GoPlay.Service
             m_sendProcessor.Start();
             m_recvProcessor.Start();
         }
-        private void HandleDisconnected(ITransfer obj)
+        protected void HandleDisconnected(ITransfer obj)
         {
             m_isHandShaked = false;
             Debug.Log("OnDisconnected");
@@ -109,7 +109,7 @@ namespace GoPlay.Service
             OnDisconnectedEvent(obj);
         }
         
-        private void HandleError(Exception obj)
+        protected void HandleError(Exception obj)
         {
             OnErrorEvent(obj);
         }

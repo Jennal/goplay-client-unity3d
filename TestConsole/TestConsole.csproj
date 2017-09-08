@@ -45,6 +45,7 @@
     <Compile Include="Login\Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerStatus\Enum.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GoPlay\GoPlay.csproj">

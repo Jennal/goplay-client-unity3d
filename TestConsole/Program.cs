@@ -9,6 +9,7 @@ using GoPlay.Package;
 using System.Threading;
 using GoPlay.Transfer;
 using TestConsole.Login;
+using TestConsole.ServerStatus;
 
 namespace TestConsole
 {
@@ -20,6 +21,21 @@ namespace TestConsole
         {
             TestGuestLogin();
             TestUserLogin();
+        }
+
+        private static void TestGetServerStatus()
+        {
+            client.OnConnected += (ITransfer transfer) =>
+            {
+                client.Request("status.server.status", (ServerStatus.ServerStatus resp) =>
+                {
+                    Console.WriteLine(resp);
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
+
         }
 
         private static void TestUserLogin()
@@ -100,16 +116,18 @@ namespace TestConsole
         {
             client.OnError += Client_OnError;
             //TestLogin();
+            TestGetServerStatus();
             //client.Connect("192.168.1.200", 24680);
+            client.Connect("", 24680);
 
-            client.OnDisconnected += Client_OnDisconnected;
-            client.OnConnected += Client_OnConnected;
+            //client.OnDisconnected += Client_OnDisconnected;
+            //client.OnConnected += Client_OnConnected;
 
-            client.On("echo.push", client, (string str) =>
-            {
-                Console.WriteLine("On Push: {0}", str);
-            });
-            client.Connect("", 1234);
+            //client.On("echo.push", client, (string str) =>
+            //{
+            //    Console.WriteLine("On Push: {0}", str);
+            //});
+            //client.Connect("", 1234);
 
             Console.ReadKey();
         }

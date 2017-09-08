@@ -21,7 +21,7 @@ namespace GoPlay.Service.Processor
         
         internal Pack CreatePackRaw(string route, byte[] buffer, PackageType t, EncodingType e)
         {
-            if (buffer.Length > UInt16.MaxValue)
+            if (buffer != null && buffer.Length > UInt16.MaxValue)
             {
                 throw new Exception(string.Format("data size exceed max length: {0} > {1}", buffer.Length, UInt16.MaxValue));
             }
@@ -31,7 +31,7 @@ namespace GoPlay.Service.Processor
                 Type = t,
                 Encoding = e,
                 Status = Status.STAT_OK,
-                ContentSize = (UInt16)buffer.Length,
+                ContentSize = buffer != null ? (UInt16)buffer.Length : (UInt16)0,
             };
 
             return new Pack(header, buffer);
