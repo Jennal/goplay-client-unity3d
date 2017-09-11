@@ -20,12 +20,21 @@ namespace GoPlay.Package
         }
     }
 
+    public class HostPort
+    {
+        public string Host;
+        public int Port;
+    }
+
     public class HandShakeResponse
     {
         public string ServerVersion;
         public DateTime Now;
         public int HeartBeatRate;
         public Dictionary<string, UInt16> Routes;
+
+        public bool IsReconnect;
+        public HostPort ReconnectTo;
     }
 
     public class HandShakeHeader : Header

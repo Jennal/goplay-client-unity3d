@@ -37,6 +37,14 @@ namespace GoPlay.Config
             return m_handShakeSaveData.DictMd5;
         }
 
+        public static HostPort GetReconnectTo()
+        {
+            if (m_handShakeResponse == null) return null;
+            if (!m_handShakeResponse.IsReconnect) return null;
+
+            return m_handShakeResponse.ReconnectTo;
+        }
+
         public static string GetStringRoute(UInt16 route)
         {
             if (m_handShakeSaveData == null) return "";

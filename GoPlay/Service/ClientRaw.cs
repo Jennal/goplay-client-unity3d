@@ -1,4 +1,5 @@
-﻿using GoPlay.Encode.Factory;
+﻿using GoPlay.Config;
+using GoPlay.Encode.Factory;
 using GoPlay.Encode.Interface;
 using GoPlay.Helper;
 using GoPlay.Package;
@@ -90,6 +91,14 @@ namespace GoPlay.Service
             {
                 m_isHandShaked = true;
                 m_heartBeatManager.Start();
+
+                var reconnectTo = GlobalHandShakeData.GetReconnectTo();
+                if (reconnectTo != null)
+                {
+                    //reconnect
+                    Disconnect();
+                    Connect(reconnectTo.Host, reconnectTo.Port);
+                }
 
                 Debug.Log("OnConnected");
                 OnConnectedEvent(transfer);
