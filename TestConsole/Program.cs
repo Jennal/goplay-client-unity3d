@@ -40,7 +40,7 @@ namespace TestConsole
 
         private static void TestUserLogin()
         {
-            var userName = "jennal1";
+            var userName = "jennal11";
             var passWord = "1234";
 
             client.OnConnected += (ITransfer transfer) =>
@@ -117,8 +117,8 @@ namespace TestConsole
             client.OnError += Client_OnError;
             //TestLogin();
             TestGetServerStatus();
-            //client.Connect("192.168.1.200", 24680);
-            client.Connect("", 24680);
+            client.Connect("192.168.1.200", 24680);
+            //client.Connect("", 24680);
 
             //client.OnDisconnected += Client_OnDisconnected;
             //client.OnConnected += Client_OnConnected;

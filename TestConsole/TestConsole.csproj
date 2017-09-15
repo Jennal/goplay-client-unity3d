@@ -45,9 +45,14 @@
     <Compile Include="Login\Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proto\Test.cs" />
     <Compile Include="ServerStatus\Enum.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Google.Protobuf\Google.Protobuf.csproj">
+      <Project>{58352206-21fc-452e-b5fb-1fb4d4088584}</Project>
+      <Name>Google.Protobuf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GoPlay\GoPlay.csproj">
       <Project>{119b4519-f2a0-4be5-8e0b-2c8213f051d6}</Project>
       <Name>GoPlay</Name>

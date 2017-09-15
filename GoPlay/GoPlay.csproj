@@ -47,6 +47,7 @@
     <Compile Include="Encode\Factory\EncoderFactory.cs" />
     <Compile Include="Encode\Interface\IEncoder.cs" />
     <Compile Include="Encode\Json\JsonEncoder.cs" />
+    <Compile Include="Encode\Protobuf\ProtobufEncoder.cs" />
     <Compile Include="Event\EventCallback.cs" />
     <Compile Include="Event\EventDispatcher.cs" />
     <Compile Include="Helper\BigEndianReader.cs" />
@@ -77,6 +78,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Google.Protobuf\Google.Protobuf.csproj">
+      <Project>{58352206-21fc-452e-b5fb-1fb4d4088584}</Project>
+      <Name>Google.Protobuf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

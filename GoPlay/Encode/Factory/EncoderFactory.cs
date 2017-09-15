@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using GoPlay.Encode.Interface;
 using GoPlay.Package;
 using GoPlay.Encode.Json;
+using GoPlay.Encode.Protobuf;
 
 namespace GoPlay.Encode.Factory
 {
@@ -12,6 +13,7 @@ namespace GoPlay.Encode.Factory
         static EncoderFactory()
         {
             Regist(EncodingType.ENCODING_JSON, new JsonEncoder());
+            Regist(EncodingType.ENCODING_PROTOBUF, new ProtobufEncoder());
         }
 
         public static void Regist(EncodingType encoding, IEncoder encoder) {

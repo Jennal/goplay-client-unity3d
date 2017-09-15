@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoPlayTests", "GoPlayTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{765FBD72-BEE0-48AA-A17F-5947427B0E7C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Google.Protobuf", "Google.Protobuf\Google.Protobuf.csproj", "{58352206-21FC-452E-B5FB-1FB4D4088584}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{765FBD72-BEE0-48AA-A17F-5947427B0E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{765FBD72-BEE0-48AA-A17F-5947427B0E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{765FBD72-BEE0-48AA-A17F-5947427B0E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58352206-21FC-452E-B5FB-1FB4D4088584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58352206-21FC-452E-B5FB-1FB4D4088584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58352206-21FC-452E-B5FB-1FB4D4088584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58352206-21FC-452E-B5FB-1FB4D4088584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
