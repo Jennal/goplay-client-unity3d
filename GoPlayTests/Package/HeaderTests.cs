@@ -45,7 +45,7 @@ namespace GoPlay.Package.Tests
                 Type = PackageType.PKG_NOTIFY,
                 Encoding = EncodingType.ENCODING_JSON,
                 ID = 3,
-                Status = Status.STAT_ERR,
+                Status = Status.Err,
                 ContentSize = 10,
             };
             var routeEncoded = header.RouteEncoded;
@@ -87,7 +87,7 @@ namespace GoPlay.Package.Tests
                 Type = PackageType.PKG_NOTIFY,
                 Encoding = EncodingType.ENCODING_JSON,
                 ID = 3,
-                Status = Status.STAT_ERR,
+                Status = Status.Err,
                 ContentSize = 10,
             };
             Assert.AreEqual("Header{ Type: PKG_NOTIFY, Encoding: ENCODING_JSON, ID: 3, Status: STAT_ERR, ContentSize: 10, Route: \"Hello\", RouteEncoded: 20 }", header.ToString());

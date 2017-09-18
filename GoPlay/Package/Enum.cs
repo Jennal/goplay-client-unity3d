@@ -2,16 +2,6 @@
 
 namespace GoPlay.Package
 {
-    public enum Status : byte
-    {
-        STAT_OK = 0x00,
-        STAT_ERR = 0x90,
-        STAT_ERR_WRONG_PARAMS = 0x91,
-        STAT_ERR_DECODE_FAILED = 0x92,
-        STAT_ERR_TIMEOUT = 0x93,
-        STAT_ERR_EMPTY_RESULT = 0x94
-    }
-
     public enum PackageType : byte
     {
         PKG_NOTIFY = 0x00,

@@ -51,7 +51,7 @@ namespace GoPlay.Service.Processor
 
         private void recvResponse(Pack pack) {
             var encoder = EncoderFactory.Create(pack.Header.Encoding);
-            if (pack.Header.Status == Status.STAT_OK) {
+            if (pack.Header.Status == Status.Ok) {
                 m_requestSuccessEventDispatcher.Emit(pack.Header.ID, pack);
             } else {
                 m_requestFailedEventDispatcher.Emit(pack.Header.ID, encoder, pack.Data);

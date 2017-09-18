@@ -30,7 +30,7 @@ namespace GoPlay.Service.Processor
             {
                 Type = t,
                 Encoding = e,
-                Status = Status.STAT_OK,
+                Status = Status.Ok,
                 ContentSize = buffer != null ? (UInt16)buffer.Length : (UInt16)0,
             };
 
