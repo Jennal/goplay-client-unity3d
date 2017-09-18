@@ -24,6 +24,7 @@ namespace GoPlay.Encode.Protobuf
             var parser = parserInfo.GetValue(null, null) as MessageParser;
             if (parser == null) throw new Exception("protobuf: convert on wrong type value");
 
+            if (buffer == null) buffer = new byte[] { };
             return (T)parser.ParseFrom(buffer);
         }
 

@@ -18,13 +18,13 @@ namespace GoPlay.Package.Tests
         [TestInitialize]
         public void Start()
         {
-            GlobalHandShakeData.Update(new HandShakeResponse
-            {
-                Routes = new Dictionary<string, ushort>
-                {
-                    { "Hello", 20 },
-                }
-            }, new JsonEncoder());
+            //GlobalHandShakeData.Update(new HandShakeResponse
+            //{
+            //    Routes = new Dictionary<string, ushort>
+            //    {
+            //        { "Hello", 20 },
+            //    }
+            //}, new JsonEncoder());
         }
 
         [TestMethod()]

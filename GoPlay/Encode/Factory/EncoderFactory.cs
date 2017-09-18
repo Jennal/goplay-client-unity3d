@@ -23,5 +23,10 @@ namespace GoPlay.Encode.Factory
             if( ! s_dict.ContainsKey(encoding)) return null;
             return s_dict[encoding];
         }
+
+        public static IEncoder GetRouteEncoder()
+        {
+            return Create(EncodingType.ENCODING_JSON);
+        }
     }
 }

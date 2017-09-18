@@ -10,7 +10,7 @@ namespace GoPlay.Config
     internal class HandShakeSaveData
     {
         public string DictMd5;
-        public Dictionary<string, UInt16> Routes;
+        public Dictionary<string, uint> Routes;
     }
 
     public interface GlobalDataSaveDelegate
@@ -62,7 +62,7 @@ namespace GoPlay.Config
             if (m_handShakeSaveData == null) return Header.ROUTE_INDEX_NONE;
             if (!m_handShakeSaveData.Routes.ContainsKey(route)) return Header.ROUTE_INDEX_NONE;
 
-            return m_handShakeSaveData.Routes[route];
+            return (UInt16)m_handShakeSaveData.Routes[route];
         }
 
         public static int GetHeartBeatRate()
@@ -107,7 +107,7 @@ namespace GoPlay.Config
         public static void Update(HandShakeResponse resp, IEncoder encoder)
         {
             m_handShakeResponse = resp;
-            m_serverTimeSpan = m_handShakeResponse.Now.Subtract(DateTime.Now);
+            m_serverTimeSpan = m_handShakeResponse.Now().Subtract(DateTime.Now);
             updateSaveData(encoder);
         }
 
@@ -117,9 +117,14 @@ namespace GoPlay.Config
 
             m_handShakeSaveData = new HandShakeSaveData
             {
-                Routes = m_handShakeResponse.Routes
+                Routes = new Dictionary<string, uint>()
             };
             m_handShakeSaveData.DictMd5 = Md5Helper.Md5(encoder, m_handShakeSaveData.Routes);
+
+            foreach (var item in m_handShakeResponse.Routes)
+            {
+                m_handShakeSaveData.Routes[item.Key] = item.Value;
+            }
 
             SaveData();
         }

@@ -59,6 +59,8 @@
     <Compile Include="Helper\Md5Helper.cs" />
     <Compile Include="Package\Enum.cs" />
     <Compile Include="Package\HandShake.cs" />
+    <Compile Include="Package\HandShakeExtension.cs" />
+    <Compile Include="Package\HandShakeHeader.cs" />
     <Compile Include="Package\Header.cs" />
     <Compile Include="Package\HeartBeatPack.cs" />
     <Compile Include="Package\Pack.cs" />

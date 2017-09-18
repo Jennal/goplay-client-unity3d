@@ -10,12 +10,114 @@ using System.Threading;
 using GoPlay.Transfer;
 using TestConsole.Login;
 using TestConsole.ServerStatus;
+using GoPlay.Encode.Protobuf;
+using Protobuf.Status;
 
 namespace TestConsole
 {
     class Program
     {
         static Client<Tcp, JsonEncoder> client = new Client<Tcp, JsonEncoder>();
+        static Client<Tcp, ProtobufEncoder> pclient = new Client<Tcp, ProtobufEncoder>();
+
+        private static void TestGetProtoServerStatus()
+        {
+            pclient.OnConnected += (ITransfer transfer) =>
+            {
+                pclient.Request("status.server.status", (ServerStatusResponse resp) =>
+                {
+                    Console.WriteLine(resp.ServerStatus);
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
+
+        }
+
+        private static void TestProtoLogin()
+        {
+            //TestProtoGuestLogin();
+            TestProtoUserLogin();
+        }
+
+        private static void TestProtoUserLogin()
+        {
+            var userName = "jennal123";
+            var passWord = "1234";
+
+            pclient.OnConnected += (ITransfer transfer) =>
+            {
+                pclient.Request("login.user.checkusername", new Protobuf.Login.CheckUserRequest
+                {
+                    Username = "abcd"
+                }, (Protobuf.Login.CheckUserResponse resp) =>
+                {
+                    Console.WriteLine("login.user.checkusername Success: {0}", resp.Result);
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("Failed: {0}, {1}", err.Code, err.Message);
+                });
+
+                pclient.Request("login.user.register", new Protobuf.Login.LoginRequest
+                {
+                    Username = userName,
+                    Password = passWord
+                }, (Protobuf.Login.LoginResponse resp) =>
+                {
+                    Console.WriteLine("login.user.register Success: {0}, {1}", resp.UserToken, resp.Power);
+                    pclient.Request("login.user.loginbytoken", new Protobuf.Login.LoginTokenRequest
+                    {
+                        UserToken = resp.UserToken
+                    }, (Protobuf.Login.LoginResponse loginResp) =>
+                    {
+                        Console.WriteLine("login.user.loginbytoken Success: {0}, {1}", resp.UserToken, resp.Power);
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("login.user.loginbytoken Failed: {0}, {1}", err.Code, err.Message);
+                    });
+
+                    pclient.Request("login.user.login", new Protobuf.Login.LoginRequest
+                    {
+                        Username = userName,
+                        Password = passWord
+                    }, (Protobuf.Login.LoginResponse loginResp) =>
+                    {
+                        Console.WriteLine("login.user.login Success: {0}, {1}", resp.UserToken, resp.Power);
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("login.user.login Failed: {0}, {1}", err.Code, err.Message);
+                    });
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("login.user.register Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
+        }
+
+        private static void TestProtoGuestLogin()
+        {
+            pclient.OnConnected += (ITransfer transfer) =>
+            {
+                pclient.Request("login.guest.register", new Protobuf.Login.RegistGuestRequest { }, (Protobuf.Login.LoginResponse resp) =>
+                {
+                    Console.WriteLine("login.guest.register Success: {0}, {1}", resp.UserToken, resp.Power);
+                    pclient.Request("login.guest.login", new Protobuf.Login.LoginTokenRequest
+                    {
+                        UserToken = resp.UserToken
+                    }, (Protobuf.Login.LoginResponse loginResp) =>
+                    {
+                        Console.WriteLine("login.guest.login Success: {0}, {1}", resp.UserToken, resp.Power);
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("login.guest.login Failed: {0}, {1}", err.Code, err.Message);
+                    });
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("login.guest.register Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
+        }
 
         static void TestLogin()
         {
@@ -114,6 +216,14 @@ namespace TestConsole
 
         static void Main(string[] args)
         {
+            //ConnectJsonClient();
+            ConnectProtoClient();
+
+            Console.ReadKey();
+        }
+
+        private static void ConnectJsonClient()
+        {
             client.OnError += Client_OnError;
             //TestLogin();
             TestGetServerStatus();
@@ -128,8 +238,14 @@ namespace TestConsole
             //    Console.WriteLine("On Push: {0}", str);
             //});
             //client.Connect("", 1234);
+        }
 
-            Console.ReadKey();
+        static void ConnectProtoClient()
+        {
+            pclient.OnError += Client_OnError;
+            //TestGetProtoServerStatus();
+            TestProtoLogin();
+            pclient.Connect("", 24680);
         }
 
         private static void Client_OnConnected(GoPlay.Transfer.ITransfer obj)

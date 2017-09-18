@@ -26,7 +26,7 @@ namespace GoPlay.Service.HandShake
         {
             var encoder = EncoderFactory.Create(pack.Header.Encoding);
             var resp = encoder.Decode<HandShakeResponse>(pack.Data);
-            GlobalHandShakeData.Update(resp, encoder);
+            GlobalHandShakeData.Update(resp, EncoderFactory.GetRouteEncoder());
 
             if (m_onSuccess != null) m_onSuccess.Invoke();
         }
