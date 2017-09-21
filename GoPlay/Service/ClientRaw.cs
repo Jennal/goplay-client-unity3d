@@ -21,6 +21,8 @@ namespace GoPlay.Service
         protected TTransfer m_transfer = new TTransfer();
         protected IEncoder m_encoder;
 
+        protected HostPort m_connectedHostPort;
+
         protected SendProcessor m_sendProcessor;
         protected RecvProcessor m_recvProcessor;
         protected HandShakeManager m_handShakeManager;
@@ -95,9 +97,17 @@ namespace GoPlay.Service
                 var reconnectTo = GlobalHandShakeData.GetReconnectTo();
                 if (reconnectTo != null)
                 {
-                    //reconnect
-                    Disconnect();
-                    Connect(reconnectTo.Host, reconnectTo.Port);
+                    if (reconnectTo.Equals(m_connectedHostPort))
+                    {
+                        OnErrorEvent(new Exception("Reconnect to same host/port which already connected!"));
+                    }
+                    else
+                    {
+                        //reconnect
+                        Disconnect();
+                        Connect(reconnectTo.Host, reconnectTo.Port);
+                        return;
+                    }
                 }
 
                 Debug.Log("OnConnected");
@@ -127,6 +137,11 @@ namespace GoPlay.Service
         public void Connect(string host, int port)
         {
             m_transfer.Connect(host, port);
+            m_connectedHostPort = new HostPort
+            {
+                Host = host,
+                Port = port
+            };
         }
 
         public void Disconnect()
