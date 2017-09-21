@@ -16,6 +16,11 @@ namespace GoPlay.Encode.Protobuf
             }
         }
 
+        public bool IsProperType<T>()
+        {
+            return typeof(IMessage).IsAssignableFrom(typeof(T));
+        }
+
         public T Decode<T>(byte[] buffer)
         {
             var parserInfo = typeof(T).GetProperty("Parser", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);

@@ -43,7 +43,7 @@ namespace TestConsole
 
         private static void TestProtoUserLogin()
         {
-            var userName = "jennal123";
+            var userName = "jennal124";
             var passWord = "1234";
 
             pclient.OnConnected += (ITransfer transfer) =>
@@ -245,7 +245,7 @@ namespace TestConsole
             pclient.OnError += Client_OnError;
             //TestGetProtoServerStatus();
             TestProtoLogin();
-            pclient.Connect("", 24680);
+            pclient.Connect("192.168.1.200", 24680);
         }
 
         private static void Client_OnConnected(GoPlay.Transfer.ITransfer obj)

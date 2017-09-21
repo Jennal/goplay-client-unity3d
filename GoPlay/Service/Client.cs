@@ -27,10 +27,18 @@ namespace GoPlay.Service
             ec.Call(encoder, pack.Data);
         }
 
+        protected bool CheckDataType<T>()
+        {
+            return m_encoder.IsProperType<T>();
+        }
+
         #region Request
 
         public void Request<T, RT>(string route, T data, Action<RT> succCallback, Action<ErrorMessage> failedCallback)
         {
+            if (!CheckDataType<T>()) throw new Exception(string.Format("Request: wrong data type, can't be encoded with {0}", m_encoder.Encoding));
+            if (!CheckDataType<RT>()) throw new Exception(string.Format("Request: wrong success callback data type, can't be encoded with {0}", m_encoder.Encoding));
+
             var buffer = m_encoder.Encode(data);
             base.Request(route, buffer, (Pack pack) =>
             {
@@ -40,6 +48,8 @@ namespace GoPlay.Service
 
         public void Request<RT>(string route, Action<RT> succCallback, Action<ErrorMessage> failedCallback)
         {
+            if (!CheckDataType<RT>()) throw new Exception(string.Format("Request: wrong success callback data type, can't be encoded with {0}", m_encoder.Encoding));
+
             base.Request(route, (Pack pack) =>
             {
                 Call(pack, succCallback);
@@ -48,6 +58,8 @@ namespace GoPlay.Service
 
         public void Notify<T>(string route, T data)
         {
+            if (!CheckDataType<T>()) throw new Exception(string.Format("Notify: wrong data type, can't be encoded with {0}", m_encoder.Encoding));
+
             var buffer = m_encoder.Encode(data);
             base.Notify(route, buffer);
         }
@@ -55,6 +67,8 @@ namespace GoPlay.Service
         #region Push
         public void On<RT, T>(string evt, RT recvObj, Action<T> callback)
         {
+            if (!CheckDataType<T>()) throw new Exception(string.Format("On: wrong callback data type, can't be encoded with {0}", m_encoder.Encoding));
+
             base.On(evt, recvObj, (Pack pack) =>
             {
                 Call(pack, callback);
@@ -68,6 +82,8 @@ namespace GoPlay.Service
 
         public void Once<RT, T>(string evt, RT recvObj, Action<T> callback)
         {
+            if (!CheckDataType<T>()) throw new Exception(string.Format("Once: wrong callback data type, can't be encoded with {0}", m_encoder.Encoding));
+
             base.Once(evt, recvObj, (Pack pack) =>
             {
                 Call(pack, callback);

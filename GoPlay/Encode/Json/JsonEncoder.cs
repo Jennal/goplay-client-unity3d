@@ -15,6 +15,11 @@ namespace GoPlay.Encode.Json
 			}
 		}
 
+        public bool IsProperType<T>()
+        {
+            return true;
+        }
+
         public T Decode<T>(byte[] buffer)
         {
             var json = System.Text.Encoding.UTF8.GetString(buffer);
