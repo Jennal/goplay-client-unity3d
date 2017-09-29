@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Protobuf.Status {
+namespace Protobuf.Data {
 
   /// <summary>Holder for reflection information generated from status.proto</summary>
   public static partial class StatusReflection {
@@ -22,14 +22,14 @@ namespace Protobuf.Status {
     static StatusReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxzdGF0dXMucHJvdG8SBnN0YXR1cyJCChRTZXJ2ZXJTdGF0dXNSZXNwb25z",
-            "ZRIqCgxTZXJ2ZXJTdGF0dXMYASABKA4yFC5zdGF0dXMuU2VydmVyU3RhdHVz",
-            "KicKDFNlcnZlclN0YXR1cxIGCgJPSxAAEg8KC01BSU5URU5BTkNFEAFCEqoC",
-            "D1Byb3RvYnVmLlN0YXR1c2IGcHJvdG8z"));
+            "CgxzdGF0dXMucHJvdG8SBnBiZGF0YSJCChRTZXJ2ZXJTdGF0dXNSZXNwb25z",
+            "ZRIqCgxTZXJ2ZXJTdGF0dXMYASABKA4yFC5wYmRhdGEuU2VydmVyU3RhdHVz",
+            "KicKDFNlcnZlclN0YXR1cxIGCgJPSxAAEg8KC01BSU5URU5BTkNFEAFCEKoC",
+            "DVByb3RvYnVmLkRhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobuf.Status.ServerStatus), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Status.ServerStatusResponse), global::Protobuf.Status.ServerStatusResponse.Parser, new[]{ "ServerStatus" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobuf.Data.ServerStatus), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.ServerStatusResponse), global::Protobuf.Data.ServerStatusResponse.Parser, new[]{ "ServerStatus" }, null, null, null)
           }));
     }
     #endregion
@@ -51,7 +51,7 @@ namespace Protobuf.Status {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Status.StatusReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Protobuf.Data.StatusReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -78,9 +78,9 @@ namespace Protobuf.Status {
 
     /// <summary>Field number for the "ServerStatus" field.</summary>
     public const int ServerStatusFieldNumber = 1;
-    private global::Protobuf.Status.ServerStatus serverStatus_ = 0;
+    private global::Protobuf.Data.ServerStatus serverStatus_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Protobuf.Status.ServerStatus ServerStatus {
+    public global::Protobuf.Data.ServerStatus ServerStatus {
       get { return serverStatus_; }
       set {
         serverStatus_ = value;
@@ -152,7 +152,7 @@ namespace Protobuf.Status {
             input.SkipLastField();
             break;
           case 8: {
-            serverStatus_ = (global::Protobuf.Status.ServerStatus) input.ReadEnum();
+            serverStatus_ = (global::Protobuf.Data.ServerStatus) input.ReadEnum();
             break;
           }
         }

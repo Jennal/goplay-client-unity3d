@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Protobuf.Login {
+namespace Protobuf.Data {
 
   /// <summary>Holder for reflection information generated from login.proto</summary>
   public static partial class LoginReflection {
@@ -22,22 +22,22 @@ namespace Protobuf.Login {
     static LoginReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgtsb2dpbi5wcm90bxIFbG9naW4iFAoSUmVnaXN0R3Vlc3RSZXF1ZXN0IiYK",
-            "EUxvZ2luVG9rZW5SZXF1ZXN0EhEKCVVzZXJUb2tlbhgBIAEoCSIyCgxMb2dp",
-            "blJlcXVlc3QSEAoIVXNlcm5hbWUYASABKAkSEAoIUGFzc3dvcmQYAiABKAki",
-            "MQoNTG9naW5SZXNwb25zZRIRCglVc2VyVG9rZW4YASABKAkSDQoFUG93ZXIY",
-            "AiABKAUiJAoQQ2hlY2tVc2VyUmVxdWVzdBIQCghVc2VybmFtZRgBIAEoCSIj",
-            "ChFDaGVja1VzZXJSZXNwb25zZRIOCgZSZXN1bHQYASABKAhCEaoCDlByb3Rv",
-            "YnVmLkxvZ2luYgZwcm90bzM="));
+            "Cgtsb2dpbi5wcm90bxIGcGJkYXRhIhQKElJlZ2lzdEd1ZXN0UmVxdWVzdCIm",
+            "ChFMb2dpblRva2VuUmVxdWVzdBIRCglVc2VyVG9rZW4YASABKAkiMgoMTG9n",
+            "aW5SZXF1ZXN0EhAKCFVzZXJuYW1lGAEgASgJEhAKCFBhc3N3b3JkGAIgASgJ",
+            "IiIKDUxvZ2luUmVzcG9uc2USEQoJVXNlclRva2VuGAEgASgJIiQKEENoZWNr",
+            "VXNlclJlcXVlc3QSEAoIVXNlcm5hbWUYASABKAkiIwoRQ2hlY2tVc2VyUmVz",
+            "cG9uc2USDgoGUmVzdWx0GAEgASgIQhCqAg1Qcm90b2J1Zi5EYXRhYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Login.RegistGuestRequest), global::Protobuf.Login.RegistGuestRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Login.LoginTokenRequest), global::Protobuf.Login.LoginTokenRequest.Parser, new[]{ "UserToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Login.LoginRequest), global::Protobuf.Login.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Login.LoginResponse), global::Protobuf.Login.LoginResponse.Parser, new[]{ "UserToken", "Power" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Login.CheckUserRequest), global::Protobuf.Login.CheckUserRequest.Parser, new[]{ "Username" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Login.CheckUserResponse), global::Protobuf.Login.CheckUserResponse.Parser, new[]{ "Result" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.RegistGuestRequest), global::Protobuf.Data.RegistGuestRequest.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.LoginTokenRequest), global::Protobuf.Data.LoginTokenRequest.Parser, new[]{ "UserToken" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.LoginRequest), global::Protobuf.Data.LoginRequest.Parser, new[]{ "Username", "Password" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.LoginResponse), global::Protobuf.Data.LoginResponse.Parser, new[]{ "UserToken" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.CheckUserRequest), global::Protobuf.Data.CheckUserRequest.Parser, new[]{ "Username" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.CheckUserResponse), global::Protobuf.Data.CheckUserResponse.Parser, new[]{ "Result" }, null, null, null)
           }));
     }
     #endregion
@@ -51,7 +51,7 @@ namespace Protobuf.Login {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Login.LoginReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Protobuf.Data.LoginReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +140,7 @@ namespace Protobuf.Login {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Login.LoginReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Protobuf.Data.LoginReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -257,7 +257,7 @@ namespace Protobuf.Login {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Login.LoginReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Protobuf.Data.LoginReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -402,7 +402,7 @@ namespace Protobuf.Login {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Login.LoginReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Protobuf.Data.LoginReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -420,7 +420,6 @@ namespace Protobuf.Login {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LoginResponse(LoginResponse other) : this() {
       userToken_ = other.userToken_;
-      power_ = other.power_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -431,22 +430,14 @@ namespace Protobuf.Login {
     /// <summary>Field number for the "UserToken" field.</summary>
     public const int UserTokenFieldNumber = 1;
     private string userToken_ = "";
+    /// <summary>
+    ///* 下次登陆使用的Token */
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string UserToken {
       get { return userToken_; }
       set {
         userToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Power" field.</summary>
-    public const int PowerFieldNumber = 2;
-    private int power_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Power {
-      get { return power_; }
-      set {
-        power_ = value;
       }
     }
 
@@ -464,7 +455,6 @@ namespace Protobuf.Login {
         return true;
       }
       if (UserToken != other.UserToken) return false;
-      if (Power != other.Power) return false;
       return true;
     }
 
@@ -472,7 +462,6 @@ namespace Protobuf.Login {
     public override int GetHashCode() {
       int hash = 1;
       if (UserToken.Length != 0) hash ^= UserToken.GetHashCode();
-      if (Power != 0) hash ^= Power.GetHashCode();
       return hash;
     }
 
@@ -487,10 +476,6 @@ namespace Protobuf.Login {
         output.WriteRawTag(10);
         output.WriteString(UserToken);
       }
-      if (Power != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Power);
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -498,9 +483,6 @@ namespace Protobuf.Login {
       int size = 0;
       if (UserToken.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(UserToken);
-      }
-      if (Power != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Power);
       }
       return size;
     }
@@ -512,9 +494,6 @@ namespace Protobuf.Login {
       }
       if (other.UserToken.Length != 0) {
         UserToken = other.UserToken;
-      }
-      if (other.Power != 0) {
-        Power = other.Power;
       }
     }
 
@@ -530,10 +509,6 @@ namespace Protobuf.Login {
             UserToken = input.ReadString();
             break;
           }
-          case 16: {
-            Power = input.ReadInt32();
-            break;
-          }
         }
       }
     }
@@ -547,7 +522,7 @@ namespace Protobuf.Login {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Login.LoginReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Protobuf.Data.LoginReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -664,7 +639,7 @@ namespace Protobuf.Login {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protobuf.Login.LoginReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Protobuf.Data.LoginReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
