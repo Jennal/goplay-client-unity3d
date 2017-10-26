@@ -37,14 +37,63 @@ namespace TestConsole
 
         private static void TestProtoLogin()
         {
-            TestProtoGuestLogin();
+            //TestProtoGuestLogin();
             //TestProtoUserLogin();
-            //TestProtoGame();
         }
 
         private static void TestProtoGame()
         {
             //throw new NotImplementedException();
+            pclient.OnConnected += (ITransfer transfer) =>
+            {
+                pclient.Request("login.guest.login", new Protobuf.Data.LoginTokenRequest
+                {
+                    UserToken = "f833841fa4c411e7885588d7f6e0b991"//resp.UserToken
+                }, (Protobuf.Data.LoginResponse loginResp) =>
+                {
+                    Console.WriteLine("login.guest.login Success: {0}", loginResp.UserToken);
+                    pclient.Request("game.dungeon.start", new Protobuf.Data.DungeonStartRequest
+                    {
+                        Dungeon = new Protobuf.Data.Dungeon
+                        {
+                            ChapterID = 1,
+                            DungeonID = 101
+                        }
+                    }, (Protobuf.Data.DungeonStartResponse resp) =>
+                    {
+                        Console.WriteLine("game.dungeon.start Success: {0}", resp);
+
+                        for (int i = 0; i < resp.CardMap.Cards.Count; i++)
+                        {
+                            var c = resp.CardMap.Cards[i];
+                            Console.Write(string.Format("{0:05d}_{1}\t", c.ID, c.Status));
+                            if ((i+1) % resp.CardMap.Width == 0) Console.WriteLine();
+                        }
+
+                        var line = Console.ReadLine();
+                        var arr = line.Split(" ".ToCharArray());
+                        var x = int.Parse(arr[0]);
+                        var y = int.Parse(arr[1]);
+
+                        pclient.Request("game.dungeon.move", new Protobuf.Data.DungeonMoveRequest
+                        {
+                            Index = (x-1) + (y-1)*6
+                        }, (Protobuf.Data.DungeonMoveResponse moveResp) =>
+                        {
+                            Console.WriteLine("game.dungeon.move Success: {0}", moveResp);
+                        }, (ErrorMessage err) =>
+                        {
+                            Console.WriteLine("game.dungeon.start Failed: {0}, {1}", err.Code, err.Message);
+                        });
+                    }, (ErrorMessage err) =>
+                    {
+                        Console.WriteLine("game.dungeon.start Failed: {0}, {1}", err.Code, err.Message);
+                    });
+                }, (ErrorMessage err) =>
+                {
+                    Console.WriteLine("login.guest.login Failed: {0}, {1}", err.Code, err.Message);
+                });
+            };
         }
 
         private static void TestProtoUserLogin()
@@ -250,9 +299,10 @@ namespace TestConsole
         {
             pclient.OnError += Client_OnError;
             //TestGetProtoServerStatus();
-            TestProtoLogin();
-            //pclient.Connect("192.168.1.200", 24680);
-            pclient.Connect("", 24680);
+            //TestProtoLogin();
+            TestProtoGame();
+            pclient.Connect("192.168.1.200", 24680);
+            //pclient.Connect("", 24680);
         }
 
         private static void Client_OnConnected(GoPlay.Transfer.ITransfer obj)

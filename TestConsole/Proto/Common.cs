@@ -46,15 +46,48 @@ namespace Protobuf.Data {
             "IAEoCzINLnBiZGF0YS5DYXJkcyI7CglDYXJkSW5NYXASIgoGU3RhdHVzGAEg",
             "ASgOMhIucGJkYXRhLkNhcmRTdGF0dXMSCgoCSUQYAiABKAUiSgoHQ2FyZE1h",
             "cBINCgVXaWR0aBgBIAEoBRIOCgZIZWlnaHQYAiABKAUSIAoFQ2FyZHMYAyAD",
-            "KAsyES5wYmRhdGEuQ2FyZEluTWFwIgcKBUV2ZW50KkQKDENhcmRQYWNrVHlw",
-            "ZRIJCgVXSElURRAAEgkKBUdSRUVOEAESCAoEQkxVRRACEgoKBlBVUlBMRRAD",
-            "EggKBEdPTEQQBCp3CgpDYXJkU3RhdHVzEgkKBVNUQVJUEAASBwoDRU5EEAES",
-            "CgoGQ0xPU0VEEAISFgoST1BFTl9OT1RfVFJJR0dFUkVEEAMSFwoTT1BFTl9U",
-            "UklHR0VSRURfT05DRRAEEhgKFE9QRU5fVFJJR0dFUkVEX01VTFRJEAVCEKoC",
-            "DVByb3RvYnVmLkRhdGFiBnByb3RvMw=="));
+            "KAsyES5wYmRhdGEuQ2FyZEluTWFwIssDCgVFdmVudBIlCgZEaWFsb2cYASAB",
+            "KAsyEy5wYmRhdGEuRXZlbnREaWFsb2dIABInCgdPcHRpb25zGAIgASgLMhQu",
+            "cGJkYXRhLkV2ZW50T3B0aW9uc0gAEikKCEhhdFRyaWNrGAMgASgLMhUucGJk",
+            "YXRhLkV2ZW50SGF0VHJpY2tIABIlCgZCYXR0bGUYBCABKAsyEy5wYmRhdGEu",
+            "RXZlbnRCYXR0bGVIABIhCgRTaG9wGAUgASgLMhEucGJkYXRhLkV2ZW50U2hv",
+            "cEgAEisKCU5leHRMZXZlbBgGIAEoCzIWLnBiZGF0YS5FdmVudE5leHRMZXZl",
+            "bEgAEi0KCk5leHRTZXJpZXMYByABKAsyFy5wYmRhdGEuRXZlbnROZXh0U2Vy",
+            "aWVzSAASKwoJRHJhd0NhcmRzGAggASgLMhYucGJkYXRhLkV2ZW50RHJhd0Nh",
+            "cmRzSAASNQoORHJhd0NhcmRzS2VlcE4YCSABKAsyGy5wYmRhdGEuRXZlbnRE",
+            "cmF3Q2FyZHNLZWVwTkgAEjUKDkRyYXdDYXJkc0Ryb3BOGAogASgLMhsucGJk",
+            "YXRhLkV2ZW50RHJhd0NhcmRzRHJvcE5IAEIGCgREYXRhIjsKC0V2ZW50RGlh",
+            "bG9nEgoKAklEGAEgASgFEiAKCU5leHRFdmVudBgCIAEoCzINLnBiZGF0YS5F",
+            "dmVudCIaCgxFdmVudE9wdGlvbnMSCgoCSUQYASABKAUiRQoNRXZlbnRIYXRU",
+            "cmljaxIKCgJJRBgBIAEoBRIoCgdPcHRpb25zGAIgAygOMhcucGJkYXRhLkV2",
+            "ZW50T3B0aW9uVHlwZSIkCgdNb25zdGVyEgoKAklEGAEgASgFEg0KBUNvdW50",
+            "GAIgASgFIm8KC0V2ZW50QmF0dGxlEgoKAklEGAEgASgFEg8KB1NjZW5lSUQY",
+            "AiABKAUSIQoITW9uc3RlcnMYAyADKAsyDy5wYmRhdGEuTW9uc3RlchIgCglO",
+            "ZXh0RXZlbnQYBCABKAsyDS5wYmRhdGEuRXZlbnQiQgoKQ2FyZEluU2hvcBIK",
+            "CgJJRBgBIAEoBRIoCgZTdGF0dXMYAiABKA4yGC5wYmRhdGEuQ2FyZEluU2hv",
+            "cFN0YXR1cyJKCglFdmVudFNob3ASCgoCSUQYASABKAUSDgoGU2hvcElEGAIg",
+            "ASgFEiEKBUNhcmRzGAMgAygLMhIucGJkYXRhLkNhcmRJblNob3AiHAoORXZl",
+            "bnROZXh0TGV2ZWwSCgoCSUQYASABKAUiLQoPRXZlbnROZXh0U2VyaWVzEgoK",
+            "AklEGAEgASgFEg4KBk5leHRJRBgCIAEoBSI6Cg5FdmVudERyYXdDYXJkcxIK",
+            "CgJJRBgBIAEoBRIcCgVDYXJkcxgCIAEoCzINLnBiZGF0YS5DYXJkcyJOChNF",
+            "dmVudERyYXdDYXJkc0tlZXBOEgoKAklEGAEgASgFEg0KBUtlZXBOGAIgASgF",
+            "EhwKBUNhcmRzGAMgASgLMg0ucGJkYXRhLkNhcmRzIk4KE0V2ZW50RHJhd0Nh",
+            "cmRzRHJvcE4SCgoCSUQYASABKAUSDQoFRHJvcE4YAiABKAUSHAoFQ2FyZHMY",
+            "AyABKAsyDS5wYmRhdGEuQ2FyZHMqRAoMQ2FyZFBhY2tUeXBlEgkKBVdISVRF",
+            "EAASCQoFR1JFRU4QARIICgRCTFVFEAISCgoGUFVSUExFEAMSCAoER09MRBAE",
+            "KoIBCgpDYXJkU3RhdHVzEgkKBUVNUFRZEAASCQoFU1RBUlQQARIHCgNFTkQQ",
+            "AhIKCgZDTE9TRUQQAxIWChJPUEVOX05PVF9UUklHR0VSRUQQBBIXChNPUEVO",
+            "X1RSSUdHRVJFRF9PTkNFEAUSGAoUT1BFTl9UUklHR0VSRURfTVVMVEkQBirc",
+            "AQoPRXZlbnRPcHRpb25UeXBlEggKBE5PTkUQABIQCgxUUklHRVJfRVZFTlQQ",
+            "ARIKCgZCQVRUTEUQAhIICgRTSE9QEAMSDwoLU0VSSVNFX05FWFQQBBIMCghH",
+            "RVRfQ0FSRBAKEhcKE0dFVF9DQVJEX09ORV9GUk9NX04QCxIXChNHRVRfQ0FS",
+            "RF9OX0RST1BfT05FEAwSEAoMR0VUX0NBUkRfQUxMEA0SCwoHU1VDQ0VTUxBk",
+            "Eg8KC1NVQ0NFU1NfQklHEGUSCAoERkFJTBBmEgwKCEZBSUxfQklHEGcqLgoQ",
+            "Q2FyZEluU2hvcFN0YXR1cxIMCghGT1JfU0VMTBAAEgwKCFNPTERfT1VUEAFC",
+            "EKoCDVByb3RvYnVmLkRhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobuf.Data.CardPackType), typeof(global::Protobuf.Data.CardStatus), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Protobuf.Data.CardPackType), typeof(global::Protobuf.Data.CardStatus), typeof(global::Protobuf.Data.EventOptionType), typeof(global::Protobuf.Data.CardInShopStatus), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.Dungeon), global::Protobuf.Data.Dungeon.Parser, new[]{ "ChapterID", "DungeonID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonLevel), global::Protobuf.Data.DungeonLevel.Parser, new[]{ "ChapterID", "DungeonID", "LevelID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonStar), global::Protobuf.Data.DungeonStar.Parser, new[]{ "ChapterID", "DungeonID", "Star" }, null, null, null),
@@ -65,7 +98,19 @@ namespace Protobuf.Data {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.PlayerStatus), global::Protobuf.Data.PlayerStatus.Parser, new[]{ "PlayerProperty", "PlayerEquips", "Equips", "Gems", "Skills", "Blessings", "Curses" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.CardInMap), global::Protobuf.Data.CardInMap.Parser, new[]{ "Status", "ID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.CardMap), global::Protobuf.Data.CardMap.Parser, new[]{ "Width", "Height", "Cards" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.Event), global::Protobuf.Data.Event.Parser, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.Event), global::Protobuf.Data.Event.Parser, new[]{ "Dialog", "Options", "HatTrick", "Battle", "Shop", "NextLevel", "NextSeries", "DrawCards", "DrawCardsKeepN", "DrawCardsDropN" }, new[]{ "Data" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventDialog), global::Protobuf.Data.EventDialog.Parser, new[]{ "ID", "NextEvent" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventOptions), global::Protobuf.Data.EventOptions.Parser, new[]{ "ID" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventHatTrick), global::Protobuf.Data.EventHatTrick.Parser, new[]{ "ID", "Options" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.Monster), global::Protobuf.Data.Monster.Parser, new[]{ "ID", "Count" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventBattle), global::Protobuf.Data.EventBattle.Parser, new[]{ "ID", "SceneID", "Monsters", "NextEvent" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.CardInShop), global::Protobuf.Data.CardInShop.Parser, new[]{ "ID", "Status" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventShop), global::Protobuf.Data.EventShop.Parser, new[]{ "ID", "ShopID", "Cards" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventNextLevel), global::Protobuf.Data.EventNextLevel.Parser, new[]{ "ID" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventNextSeries), global::Protobuf.Data.EventNextSeries.Parser, new[]{ "ID", "NextID" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventDrawCards), global::Protobuf.Data.EventDrawCards.Parser, new[]{ "ID", "Cards" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventDrawCardsKeepN), global::Protobuf.Data.EventDrawCardsKeepN.Parser, new[]{ "ID", "KeepN", "Cards" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventDrawCardsDropN), global::Protobuf.Data.EventDrawCardsDropN.Parser, new[]{ "ID", "DropN", "Cards" }, null, null, null)
           }));
     }
     #endregion
@@ -88,29 +133,105 @@ namespace Protobuf.Data {
   /// </summary>
   public enum CardStatus {
     /// <summary>
+    ///* 空白位置 */
+    /// </summary>
+    [pbr::OriginalName("EMPTY")] Empty = 0,
+    /// <summary>
     ///* 开始位置 */
     /// </summary>
-    [pbr::OriginalName("START")] Start = 0,
+    [pbr::OriginalName("START")] Start = 1,
     /// <summary>
     ///* 结束位置 */
     /// </summary>
-    [pbr::OriginalName("END")] End = 1,
+    [pbr::OriginalName("END")] End = 2,
     /// <summary>
     ///* 未打开 */
     /// </summary>
-    [pbr::OriginalName("CLOSED")] Closed = 2,
+    [pbr::OriginalName("CLOSED")] Closed = 3,
     /// <summary>
     ///* 打开，未走过 */
     /// </summary>
-    [pbr::OriginalName("OPEN_NOT_TRIGGERED")] OpenNotTriggered = 3,
+    [pbr::OriginalName("OPEN_NOT_TRIGGERED")] OpenNotTriggered = 4,
     /// <summary>
     ///* 打开，走过，并且只能触发一次，即不能再次被触发 */
     /// </summary>
-    [pbr::OriginalName("OPEN_TRIGGERED_ONCE")] OpenTriggeredOnce = 4,
+    [pbr::OriginalName("OPEN_TRIGGERED_ONCE")] OpenTriggeredOnce = 5,
     /// <summary>
     ///* 打开，走过，可以再次被触发 */
     /// </summary>
-    [pbr::OriginalName("OPEN_TRIGGERED_MULTI")] OpenTriggeredMulti = 5,
+    [pbr::OriginalName("OPEN_TRIGGERED_MULTI")] OpenTriggeredMulti = 6,
+  }
+
+  /// <summary>
+  ///* 事件选项类型 */
+  /// </summary>
+  public enum EventOptionType {
+    /// <summary>
+    ///0 无效果，事件结束
+    /// </summary>
+    [pbr::OriginalName("NONE")] None = 0,
+    /// <summary>
+    ///1 触发事件
+    /// </summary>
+    [pbr::OriginalName("TRIGER_EVENT")] TrigerEvent = 1,
+    /// <summary>
+    ///2 战斗抽取
+    /// </summary>
+    [pbr::OriginalName("BATTLE")] Battle = 2,
+    /// <summary>
+    ///3 商店ID
+    /// </summary>
+    [pbr::OriginalName("SHOP")] Shop = 3,
+    /// <summary>
+    ///4 下一系列事件更换
+    /// </summary>
+    [pbr::OriginalName("SERISE_NEXT")] SeriseNext = 4,
+    /// <summary>
+    ///10 获得1张卡牌
+    /// </summary>
+    [pbr::OriginalName("GET_CARD")] GetCard = 10,
+    /// <summary>
+    ///11 获得卡牌N选一
+    /// </summary>
+    [pbr::OriginalName("GET_CARD_ONE_FROM_N")] GetCardOneFromN = 11,
+    /// <summary>
+    ///12 获得卡牌N弃一
+    /// </summary>
+    [pbr::OriginalName("GET_CARD_N_DROP_ONE")] GetCardNDropOne = 12,
+    /// <summary>
+    ///13 所有卡牌获得
+    /// </summary>
+    [pbr::OriginalName("GET_CARD_ALL")] GetCardAll = 13,
+    /// <summary>
+    ///100 成功
+    /// </summary>
+    [pbr::OriginalName("SUCCESS")] Success = 100,
+    /// <summary>
+    ///101 大成功
+    /// </summary>
+    [pbr::OriginalName("SUCCESS_BIG")] SuccessBig = 101,
+    /// <summary>
+    ///102 失败
+    /// </summary>
+    [pbr::OriginalName("FAIL")] Fail = 102,
+    /// <summary>
+    ///103 大失败
+    /// </summary>
+    [pbr::OriginalName("FAIL_BIG")] FailBig = 103,
+  }
+
+  /// <summary>
+  ///* 商店销售的卡牌状态 */
+  /// </summary>
+  public enum CardInShopStatus {
+    /// <summary>
+    ///* 可购 */
+    /// </summary>
+    [pbr::OriginalName("FOR_SELL")] ForSell = 0,
+    /// <summary>
+    ///* 售罄 */
+    /// </summary>
+    [pbr::OriginalName("SOLD_OUT")] SoldOut = 1,
   }
 
   #endregion
@@ -2325,11 +2446,211 @@ namespace Protobuf.Data {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Event(Event other) : this() {
+      switch (other.DataCase) {
+        case DataOneofCase.Dialog:
+          Dialog = other.Dialog.Clone();
+          break;
+        case DataOneofCase.Options:
+          Options = other.Options.Clone();
+          break;
+        case DataOneofCase.HatTrick:
+          HatTrick = other.HatTrick.Clone();
+          break;
+        case DataOneofCase.Battle:
+          Battle = other.Battle.Clone();
+          break;
+        case DataOneofCase.Shop:
+          Shop = other.Shop.Clone();
+          break;
+        case DataOneofCase.NextLevel:
+          NextLevel = other.NextLevel.Clone();
+          break;
+        case DataOneofCase.NextSeries:
+          NextSeries = other.NextSeries.Clone();
+          break;
+        case DataOneofCase.DrawCards:
+          DrawCards = other.DrawCards.Clone();
+          break;
+        case DataOneofCase.DrawCardsKeepN:
+          DrawCardsKeepN = other.DrawCardsKeepN.Clone();
+          break;
+        case DataOneofCase.DrawCardsDropN:
+          DrawCardsDropN = other.DrawCardsDropN.Clone();
+          break;
+      }
+
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Event Clone() {
       return new Event(this);
+    }
+
+    /// <summary>Field number for the "Dialog" field.</summary>
+    public const int DialogFieldNumber = 1;
+    /// <summary>
+    ///对话事件
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventDialog Dialog {
+      get { return dataCase_ == DataOneofCase.Dialog ? (global::Protobuf.Data.EventDialog) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.Dialog;
+      }
+    }
+
+    /// <summary>Field number for the "Options" field.</summary>
+    public const int OptionsFieldNumber = 2;
+    /// <summary>
+    ///选项事件
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventOptions Options {
+      get { return dataCase_ == DataOneofCase.Options ? (global::Protobuf.Data.EventOptions) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.Options;
+      }
+    }
+
+    /// <summary>Field number for the "HatTrick" field.</summary>
+    public const int HatTrickFieldNumber = 3;
+    /// <summary>
+    ///翻牌事件
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventHatTrick HatTrick {
+      get { return dataCase_ == DataOneofCase.HatTrick ? (global::Protobuf.Data.EventHatTrick) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.HatTrick;
+      }
+    }
+
+    /// <summary>Field number for the "Battle" field.</summary>
+    public const int BattleFieldNumber = 4;
+    /// <summary>
+    ///战斗事件
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventBattle Battle {
+      get { return dataCase_ == DataOneofCase.Battle ? (global::Protobuf.Data.EventBattle) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.Battle;
+      }
+    }
+
+    /// <summary>Field number for the "Shop" field.</summary>
+    public const int ShopFieldNumber = 5;
+    /// <summary>
+    ///商店事件
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventShop Shop {
+      get { return dataCase_ == DataOneofCase.Shop ? (global::Protobuf.Data.EventShop) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.Shop;
+      }
+    }
+
+    /// <summary>Field number for the "NextLevel" field.</summary>
+    public const int NextLevelFieldNumber = 6;
+    /// <summary>
+    ///下一层事件
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventNextLevel NextLevel {
+      get { return dataCase_ == DataOneofCase.NextLevel ? (global::Protobuf.Data.EventNextLevel) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.NextLevel;
+      }
+    }
+
+    /// <summary>Field number for the "NextSeries" field.</summary>
+    public const int NextSeriesFieldNumber = 7;
+    /// <summary>
+    ///下一系列事件更换
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventNextSeries NextSeries {
+      get { return dataCase_ == DataOneofCase.NextSeries ? (global::Protobuf.Data.EventNextSeries) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.NextSeries;
+      }
+    }
+
+    /// <summary>Field number for the "DrawCards" field.</summary>
+    public const int DrawCardsFieldNumber = 8;
+    /// <summary>
+    ///抽卡 N 张，N = [1,]
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventDrawCards DrawCards {
+      get { return dataCase_ == DataOneofCase.DrawCards ? (global::Protobuf.Data.EventDrawCards) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.DrawCards;
+      }
+    }
+
+    /// <summary>Field number for the "DrawCardsKeepN" field.</summary>
+    public const int DrawCardsKeepNFieldNumber = 9;
+    /// <summary>
+    ///抽卡，选择 N 张卡保留
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventDrawCardsKeepN DrawCardsKeepN {
+      get { return dataCase_ == DataOneofCase.DrawCardsKeepN ? (global::Protobuf.Data.EventDrawCardsKeepN) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.DrawCardsKeepN;
+      }
+    }
+
+    /// <summary>Field number for the "DrawCardsDropN" field.</summary>
+    public const int DrawCardsDropNFieldNumber = 10;
+    /// <summary>
+    ///抽卡，选择 N 张卡抛弃
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.EventDrawCardsDropN DrawCardsDropN {
+      get { return dataCase_ == DataOneofCase.DrawCardsDropN ? (global::Protobuf.Data.EventDrawCardsDropN) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.DrawCardsDropN;
+      }
+    }
+
+    private object data_;
+    /// <summary>Enum of possible cases for the "Data" oneof.</summary>
+    public enum DataOneofCase {
+      None = 0,
+      Dialog = 1,
+      Options = 2,
+      HatTrick = 3,
+      Battle = 4,
+      Shop = 5,
+      NextLevel = 6,
+      NextSeries = 7,
+      DrawCards = 8,
+      DrawCardsKeepN = 9,
+      DrawCardsDropN = 10,
+    }
+    private DataOneofCase dataCase_ = DataOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DataOneofCase DataCase {
+      get { return dataCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearData() {
+      dataCase_ = DataOneofCase.None;
+      data_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2345,12 +2666,34 @@ namespace Protobuf.Data {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Dialog, other.Dialog)) return false;
+      if (!object.Equals(Options, other.Options)) return false;
+      if (!object.Equals(HatTrick, other.HatTrick)) return false;
+      if (!object.Equals(Battle, other.Battle)) return false;
+      if (!object.Equals(Shop, other.Shop)) return false;
+      if (!object.Equals(NextLevel, other.NextLevel)) return false;
+      if (!object.Equals(NextSeries, other.NextSeries)) return false;
+      if (!object.Equals(DrawCards, other.DrawCards)) return false;
+      if (!object.Equals(DrawCardsKeepN, other.DrawCardsKeepN)) return false;
+      if (!object.Equals(DrawCardsDropN, other.DrawCardsDropN)) return false;
+      if (DataCase != other.DataCase) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (dataCase_ == DataOneofCase.Dialog) hash ^= Dialog.GetHashCode();
+      if (dataCase_ == DataOneofCase.Options) hash ^= Options.GetHashCode();
+      if (dataCase_ == DataOneofCase.HatTrick) hash ^= HatTrick.GetHashCode();
+      if (dataCase_ == DataOneofCase.Battle) hash ^= Battle.GetHashCode();
+      if (dataCase_ == DataOneofCase.Shop) hash ^= Shop.GetHashCode();
+      if (dataCase_ == DataOneofCase.NextLevel) hash ^= NextLevel.GetHashCode();
+      if (dataCase_ == DataOneofCase.NextSeries) hash ^= NextSeries.GetHashCode();
+      if (dataCase_ == DataOneofCase.DrawCards) hash ^= DrawCards.GetHashCode();
+      if (dataCase_ == DataOneofCase.DrawCardsKeepN) hash ^= DrawCardsKeepN.GetHashCode();
+      if (dataCase_ == DataOneofCase.DrawCardsDropN) hash ^= DrawCardsDropN.GetHashCode();
+      hash ^= (int) dataCase_;
       return hash;
     }
 
@@ -2361,11 +2704,81 @@ namespace Protobuf.Data {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (dataCase_ == DataOneofCase.Dialog) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Dialog);
+      }
+      if (dataCase_ == DataOneofCase.Options) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Options);
+      }
+      if (dataCase_ == DataOneofCase.HatTrick) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HatTrick);
+      }
+      if (dataCase_ == DataOneofCase.Battle) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Battle);
+      }
+      if (dataCase_ == DataOneofCase.Shop) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Shop);
+      }
+      if (dataCase_ == DataOneofCase.NextLevel) {
+        output.WriteRawTag(50);
+        output.WriteMessage(NextLevel);
+      }
+      if (dataCase_ == DataOneofCase.NextSeries) {
+        output.WriteRawTag(58);
+        output.WriteMessage(NextSeries);
+      }
+      if (dataCase_ == DataOneofCase.DrawCards) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DrawCards);
+      }
+      if (dataCase_ == DataOneofCase.DrawCardsKeepN) {
+        output.WriteRawTag(74);
+        output.WriteMessage(DrawCardsKeepN);
+      }
+      if (dataCase_ == DataOneofCase.DrawCardsDropN) {
+        output.WriteRawTag(82);
+        output.WriteMessage(DrawCardsDropN);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (dataCase_ == DataOneofCase.Dialog) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dialog);
+      }
+      if (dataCase_ == DataOneofCase.Options) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Options);
+      }
+      if (dataCase_ == DataOneofCase.HatTrick) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HatTrick);
+      }
+      if (dataCase_ == DataOneofCase.Battle) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Battle);
+      }
+      if (dataCase_ == DataOneofCase.Shop) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Shop);
+      }
+      if (dataCase_ == DataOneofCase.NextLevel) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextLevel);
+      }
+      if (dataCase_ == DataOneofCase.NextSeries) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextSeries);
+      }
+      if (dataCase_ == DataOneofCase.DrawCards) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DrawCards);
+      }
+      if (dataCase_ == DataOneofCase.DrawCardsKeepN) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DrawCardsKeepN);
+      }
+      if (dataCase_ == DataOneofCase.DrawCardsDropN) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DrawCardsDropN);
+      }
       return size;
     }
 
@@ -2373,6 +2786,278 @@ namespace Protobuf.Data {
     public void MergeFrom(Event other) {
       if (other == null) {
         return;
+      }
+      switch (other.DataCase) {
+        case DataOneofCase.Dialog:
+          Dialog = other.Dialog;
+          break;
+        case DataOneofCase.Options:
+          Options = other.Options;
+          break;
+        case DataOneofCase.HatTrick:
+          HatTrick = other.HatTrick;
+          break;
+        case DataOneofCase.Battle:
+          Battle = other.Battle;
+          break;
+        case DataOneofCase.Shop:
+          Shop = other.Shop;
+          break;
+        case DataOneofCase.NextLevel:
+          NextLevel = other.NextLevel;
+          break;
+        case DataOneofCase.NextSeries:
+          NextSeries = other.NextSeries;
+          break;
+        case DataOneofCase.DrawCards:
+          DrawCards = other.DrawCards;
+          break;
+        case DataOneofCase.DrawCardsKeepN:
+          DrawCardsKeepN = other.DrawCardsKeepN;
+          break;
+        case DataOneofCase.DrawCardsDropN:
+          DrawCardsDropN = other.DrawCardsDropN;
+          break;
+      }
+
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            global::Protobuf.Data.EventDialog subBuilder = new global::Protobuf.Data.EventDialog();
+            if (dataCase_ == DataOneofCase.Dialog) {
+              subBuilder.MergeFrom(Dialog);
+            }
+            input.ReadMessage(subBuilder);
+            Dialog = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Protobuf.Data.EventOptions subBuilder = new global::Protobuf.Data.EventOptions();
+            if (dataCase_ == DataOneofCase.Options) {
+              subBuilder.MergeFrom(Options);
+            }
+            input.ReadMessage(subBuilder);
+            Options = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Protobuf.Data.EventHatTrick subBuilder = new global::Protobuf.Data.EventHatTrick();
+            if (dataCase_ == DataOneofCase.HatTrick) {
+              subBuilder.MergeFrom(HatTrick);
+            }
+            input.ReadMessage(subBuilder);
+            HatTrick = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Protobuf.Data.EventBattle subBuilder = new global::Protobuf.Data.EventBattle();
+            if (dataCase_ == DataOneofCase.Battle) {
+              subBuilder.MergeFrom(Battle);
+            }
+            input.ReadMessage(subBuilder);
+            Battle = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Protobuf.Data.EventShop subBuilder = new global::Protobuf.Data.EventShop();
+            if (dataCase_ == DataOneofCase.Shop) {
+              subBuilder.MergeFrom(Shop);
+            }
+            input.ReadMessage(subBuilder);
+            Shop = subBuilder;
+            break;
+          }
+          case 50: {
+            global::Protobuf.Data.EventNextLevel subBuilder = new global::Protobuf.Data.EventNextLevel();
+            if (dataCase_ == DataOneofCase.NextLevel) {
+              subBuilder.MergeFrom(NextLevel);
+            }
+            input.ReadMessage(subBuilder);
+            NextLevel = subBuilder;
+            break;
+          }
+          case 58: {
+            global::Protobuf.Data.EventNextSeries subBuilder = new global::Protobuf.Data.EventNextSeries();
+            if (dataCase_ == DataOneofCase.NextSeries) {
+              subBuilder.MergeFrom(NextSeries);
+            }
+            input.ReadMessage(subBuilder);
+            NextSeries = subBuilder;
+            break;
+          }
+          case 66: {
+            global::Protobuf.Data.EventDrawCards subBuilder = new global::Protobuf.Data.EventDrawCards();
+            if (dataCase_ == DataOneofCase.DrawCards) {
+              subBuilder.MergeFrom(DrawCards);
+            }
+            input.ReadMessage(subBuilder);
+            DrawCards = subBuilder;
+            break;
+          }
+          case 74: {
+            global::Protobuf.Data.EventDrawCardsKeepN subBuilder = new global::Protobuf.Data.EventDrawCardsKeepN();
+            if (dataCase_ == DataOneofCase.DrawCardsKeepN) {
+              subBuilder.MergeFrom(DrawCardsKeepN);
+            }
+            input.ReadMessage(subBuilder);
+            DrawCardsKeepN = subBuilder;
+            break;
+          }
+          case 82: {
+            global::Protobuf.Data.EventDrawCardsDropN subBuilder = new global::Protobuf.Data.EventDrawCardsDropN();
+            if (dataCase_ == DataOneofCase.DrawCardsDropN) {
+              subBuilder.MergeFrom(DrawCardsDropN);
+            }
+            input.ReadMessage(subBuilder);
+            DrawCardsDropN = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 对话事件 */
+  /// </summary>
+  public sealed partial class EventDialog : pb::IMessage<EventDialog> {
+    private static readonly pb::MessageParser<EventDialog> _parser = new pb::MessageParser<EventDialog>(() => new EventDialog());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventDialog> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDialog() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDialog(EventDialog other) : this() {
+      iD_ = other.iD_;
+      NextEvent = other.nextEvent_ != null ? other.NextEvent.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDialog Clone() {
+      return new EventDialog(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "NextEvent" field.</summary>
+    public const int NextEventFieldNumber = 2;
+    private global::Protobuf.Data.Event nextEvent_;
+    /// <summary>
+    ///* 下一事件 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.Event NextEvent {
+      get { return nextEvent_; }
+      set {
+        nextEvent_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventDialog);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventDialog other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (!object.Equals(NextEvent, other.NextEvent)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (nextEvent_ != null) hash ^= NextEvent.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (nextEvent_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(NextEvent);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (nextEvent_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextEvent);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventDialog other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.nextEvent_ != null) {
+        if (nextEvent_ == null) {
+          nextEvent_ = new global::Protobuf.Data.Event();
+        }
+        NextEvent.MergeFrom(other.NextEvent);
       }
     }
 
@@ -2384,6 +3069,1799 @@ namespace Protobuf.Data {
           default:
             input.SkipLastField();
             break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (nextEvent_ == null) {
+              nextEvent_ = new global::Protobuf.Data.Event();
+            }
+            input.ReadMessage(nextEvent_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 选项事件 */
+  /// </summary>
+  public sealed partial class EventOptions : pb::IMessage<EventOptions> {
+    private static readonly pb::MessageParser<EventOptions> _parser = new pb::MessageParser<EventOptions>(() => new EventOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventOptions> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventOptions() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventOptions(EventOptions other) : this() {
+      iD_ = other.iD_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventOptions Clone() {
+      return new EventOptions(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventOptions);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventOptions other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventOptions other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 翻牌事件 */
+  /// </summary>
+  public sealed partial class EventHatTrick : pb::IMessage<EventHatTrick> {
+    private static readonly pb::MessageParser<EventHatTrick> _parser = new pb::MessageParser<EventHatTrick>(() => new EventHatTrick());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventHatTrick> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventHatTrick() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventHatTrick(EventHatTrick other) : this() {
+      iD_ = other.iD_;
+      options_ = other.options_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventHatTrick Clone() {
+      return new EventHatTrick(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Options" field.</summary>
+    public const int OptionsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Protobuf.Data.EventOptionType> _repeated_options_codec
+        = pb::FieldCodec.ForEnum(18, x => (int) x, x => (global::Protobuf.Data.EventOptionType) x);
+    private readonly pbc::RepeatedField<global::Protobuf.Data.EventOptionType> options_ = new pbc::RepeatedField<global::Protobuf.Data.EventOptionType>();
+    /// <summary>
+    ///* 选项列表 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Protobuf.Data.EventOptionType> Options {
+      get { return options_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventHatTrick);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventHatTrick other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if(!options_.Equals(other.options_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      hash ^= options_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      options_.WriteTo(output, _repeated_options_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      size += options_.CalculateSize(_repeated_options_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventHatTrick other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      options_.Add(other.options_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 18:
+          case 16: {
+            options_.AddEntriesFrom(input, _repeated_options_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 怪物 */
+  /// </summary>
+  public sealed partial class Monster : pb::IMessage<Monster> {
+    private static readonly pb::MessageParser<Monster> _parser = new pb::MessageParser<Monster>(() => new Monster());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Monster> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Monster() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Monster(Monster other) : this() {
+      iD_ = other.iD_;
+      count_ = other.count_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Monster Clone() {
+      return new Monster(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 怪物ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Count" field.</summary>
+    public const int CountFieldNumber = 2;
+    private int count_;
+    /// <summary>
+    ///* 怪物数量 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Count {
+      get { return count_; }
+      set {
+        count_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Monster);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Monster other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Count != other.Count) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Count != 0) hash ^= Count.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Count != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Count);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Count != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Count);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Monster other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Count != 0) {
+        Count = other.Count;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Count = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 战斗事件 */
+  /// </summary>
+  public sealed partial class EventBattle : pb::IMessage<EventBattle> {
+    private static readonly pb::MessageParser<EventBattle> _parser = new pb::MessageParser<EventBattle>(() => new EventBattle());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventBattle> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventBattle() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventBattle(EventBattle other) : this() {
+      iD_ = other.iD_;
+      sceneID_ = other.sceneID_;
+      monsters_ = other.monsters_.Clone();
+      NextEvent = other.nextEvent_ != null ? other.NextEvent.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventBattle Clone() {
+      return new EventBattle(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "SceneID" field.</summary>
+    public const int SceneIDFieldNumber = 2;
+    private int sceneID_;
+    /// <summary>
+    ///* 关卡ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SceneID {
+      get { return sceneID_; }
+      set {
+        sceneID_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Monsters" field.</summary>
+    public const int MonstersFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Protobuf.Data.Monster> _repeated_monsters_codec
+        = pb::FieldCodec.ForMessage(26, global::Protobuf.Data.Monster.Parser);
+    private readonly pbc::RepeatedField<global::Protobuf.Data.Monster> monsters_ = new pbc::RepeatedField<global::Protobuf.Data.Monster>();
+    /// <summary>
+    ///* 怪物列表 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Protobuf.Data.Monster> Monsters {
+      get { return monsters_; }
+    }
+
+    /// <summary>Field number for the "NextEvent" field.</summary>
+    public const int NextEventFieldNumber = 4;
+    private global::Protobuf.Data.Event nextEvent_;
+    /// <summary>
+    ///* 战斗胜利，触发下一事件 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.Event NextEvent {
+      get { return nextEvent_; }
+      set {
+        nextEvent_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventBattle);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventBattle other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (SceneID != other.SceneID) return false;
+      if(!monsters_.Equals(other.monsters_)) return false;
+      if (!object.Equals(NextEvent, other.NextEvent)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (SceneID != 0) hash ^= SceneID.GetHashCode();
+      hash ^= monsters_.GetHashCode();
+      if (nextEvent_ != null) hash ^= NextEvent.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (SceneID != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(SceneID);
+      }
+      monsters_.WriteTo(output, _repeated_monsters_codec);
+      if (nextEvent_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(NextEvent);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (SceneID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SceneID);
+      }
+      size += monsters_.CalculateSize(_repeated_monsters_codec);
+      if (nextEvent_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextEvent);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventBattle other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.SceneID != 0) {
+        SceneID = other.SceneID;
+      }
+      monsters_.Add(other.monsters_);
+      if (other.nextEvent_ != null) {
+        if (nextEvent_ == null) {
+          nextEvent_ = new global::Protobuf.Data.Event();
+        }
+        NextEvent.MergeFrom(other.NextEvent);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            SceneID = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            monsters_.AddEntriesFrom(input, _repeated_monsters_codec);
+            break;
+          }
+          case 34: {
+            if (nextEvent_ == null) {
+              nextEvent_ = new global::Protobuf.Data.Event();
+            }
+            input.ReadMessage(nextEvent_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 商店销售的卡牌 */
+  /// </summary>
+  public sealed partial class CardInShop : pb::IMessage<CardInShop> {
+    private static readonly pb::MessageParser<CardInShop> _parser = new pb::MessageParser<CardInShop>(() => new CardInShop());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CardInShop> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CardInShop() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CardInShop(CardInShop other) : this() {
+      iD_ = other.iD_;
+      status_ = other.status_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CardInShop Clone() {
+      return new CardInShop(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Status" field.</summary>
+    public const int StatusFieldNumber = 2;
+    private global::Protobuf.Data.CardInShopStatus status_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.CardInShopStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CardInShop);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CardInShop other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (Status != other.Status) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (Status != 0) hash ^= Status.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (Status != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Status);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (Status != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CardInShop other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.Status != 0) {
+        Status = other.Status;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            status_ = (global::Protobuf.Data.CardInShopStatus) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 商店事件 */
+  /// </summary>
+  public sealed partial class EventShop : pb::IMessage<EventShop> {
+    private static readonly pb::MessageParser<EventShop> _parser = new pb::MessageParser<EventShop>(() => new EventShop());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventShop> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventShop() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventShop(EventShop other) : this() {
+      iD_ = other.iD_;
+      shopID_ = other.shopID_;
+      cards_ = other.cards_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventShop Clone() {
+      return new EventShop(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ShopID" field.</summary>
+    public const int ShopIDFieldNumber = 2;
+    private int shopID_;
+    /// <summary>
+    ///* 商店ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ShopID {
+      get { return shopID_; }
+      set {
+        shopID_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Cards" field.</summary>
+    public const int CardsFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Protobuf.Data.CardInShop> _repeated_cards_codec
+        = pb::FieldCodec.ForMessage(26, global::Protobuf.Data.CardInShop.Parser);
+    private readonly pbc::RepeatedField<global::Protobuf.Data.CardInShop> cards_ = new pbc::RepeatedField<global::Protobuf.Data.CardInShop>();
+    /// <summary>
+    ///* 商店中销售的卡牌列表 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Protobuf.Data.CardInShop> Cards {
+      get { return cards_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventShop);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventShop other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (ShopID != other.ShopID) return false;
+      if(!cards_.Equals(other.cards_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (ShopID != 0) hash ^= ShopID.GetHashCode();
+      hash ^= cards_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (ShopID != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(ShopID);
+      }
+      cards_.WriteTo(output, _repeated_cards_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (ShopID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ShopID);
+      }
+      size += cards_.CalculateSize(_repeated_cards_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventShop other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.ShopID != 0) {
+        ShopID = other.ShopID;
+      }
+      cards_.Add(other.cards_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            ShopID = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            cards_.AddEntriesFrom(input, _repeated_cards_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 下一层事件 */
+  /// </summary>
+  public sealed partial class EventNextLevel : pb::IMessage<EventNextLevel> {
+    private static readonly pb::MessageParser<EventNextLevel> _parser = new pb::MessageParser<EventNextLevel>(() => new EventNextLevel());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventNextLevel> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventNextLevel() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventNextLevel(EventNextLevel other) : this() {
+      iD_ = other.iD_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventNextLevel Clone() {
+      return new EventNextLevel(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventNextLevel);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventNextLevel other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventNextLevel other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 下一系列事件更换 */
+  /// </summary>
+  public sealed partial class EventNextSeries : pb::IMessage<EventNextSeries> {
+    private static readonly pb::MessageParser<EventNextSeries> _parser = new pb::MessageParser<EventNextSeries>(() => new EventNextSeries());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventNextSeries> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventNextSeries() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventNextSeries(EventNextSeries other) : this() {
+      iD_ = other.iD_;
+      nextID_ = other.nextID_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventNextSeries Clone() {
+      return new EventNextSeries(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "NextID" field.</summary>
+    public const int NextIDFieldNumber = 2;
+    private int nextID_;
+    /// <summary>
+    ///* 下一系列事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NextID {
+      get { return nextID_; }
+      set {
+        nextID_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventNextSeries);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventNextSeries other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (NextID != other.NextID) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (NextID != 0) hash ^= NextID.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (NextID != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(NextID);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (NextID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NextID);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventNextSeries other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.NextID != 0) {
+        NextID = other.NextID;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            NextID = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 获得卡牌 */
+  /// </summary>
+  public sealed partial class EventDrawCards : pb::IMessage<EventDrawCards> {
+    private static readonly pb::MessageParser<EventDrawCards> _parser = new pb::MessageParser<EventDrawCards>(() => new EventDrawCards());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventDrawCards> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCards() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCards(EventDrawCards other) : this() {
+      iD_ = other.iD_;
+      Cards = other.cards_ != null ? other.Cards.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCards Clone() {
+      return new EventDrawCards(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 虚拟事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Cards" field.</summary>
+    public const int CardsFieldNumber = 2;
+    private global::Protobuf.Data.Cards cards_;
+    /// <summary>
+    ///* 卡牌ID列表 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.Cards Cards {
+      get { return cards_; }
+      set {
+        cards_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventDrawCards);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventDrawCards other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (!object.Equals(Cards, other.Cards)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (cards_ != null) hash ^= Cards.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (cards_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Cards);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (cards_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Cards);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventDrawCards other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.cards_ != null) {
+        if (cards_ == null) {
+          cards_ = new global::Protobuf.Data.Cards();
+        }
+        Cards.MergeFrom(other.Cards);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (cards_ == null) {
+              cards_ = new global::Protobuf.Data.Cards();
+            }
+            input.ReadMessage(cards_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 获得卡牌，选择 N 张卡保留 */
+  /// </summary>
+  public sealed partial class EventDrawCardsKeepN : pb::IMessage<EventDrawCardsKeepN> {
+    private static readonly pb::MessageParser<EventDrawCardsKeepN> _parser = new pb::MessageParser<EventDrawCardsKeepN>(() => new EventDrawCardsKeepN());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventDrawCardsKeepN> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCardsKeepN() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCardsKeepN(EventDrawCardsKeepN other) : this() {
+      iD_ = other.iD_;
+      keepN_ = other.keepN_;
+      Cards = other.cards_ != null ? other.Cards.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCardsKeepN Clone() {
+      return new EventDrawCardsKeepN(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 虚拟事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "KeepN" field.</summary>
+    public const int KeepNFieldNumber = 2;
+    private int keepN_;
+    /// <summary>
+    ///* 保留个数 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int KeepN {
+      get { return keepN_; }
+      set {
+        keepN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Cards" field.</summary>
+    public const int CardsFieldNumber = 3;
+    private global::Protobuf.Data.Cards cards_;
+    /// <summary>
+    ///* 卡牌ID列表 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.Cards Cards {
+      get { return cards_; }
+      set {
+        cards_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventDrawCardsKeepN);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventDrawCardsKeepN other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (KeepN != other.KeepN) return false;
+      if (!object.Equals(Cards, other.Cards)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (KeepN != 0) hash ^= KeepN.GetHashCode();
+      if (cards_ != null) hash ^= Cards.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (KeepN != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(KeepN);
+      }
+      if (cards_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Cards);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (KeepN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(KeepN);
+      }
+      if (cards_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Cards);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventDrawCardsKeepN other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.KeepN != 0) {
+        KeepN = other.KeepN;
+      }
+      if (other.cards_ != null) {
+        if (cards_ == null) {
+          cards_ = new global::Protobuf.Data.Cards();
+        }
+        Cards.MergeFrom(other.Cards);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            KeepN = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            if (cards_ == null) {
+              cards_ = new global::Protobuf.Data.Cards();
+            }
+            input.ReadMessage(cards_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///* 获得卡牌，选择 N 张卡抛弃 */
+  /// </summary>
+  public sealed partial class EventDrawCardsDropN : pb::IMessage<EventDrawCardsDropN> {
+    private static readonly pb::MessageParser<EventDrawCardsDropN> _parser = new pb::MessageParser<EventDrawCardsDropN>(() => new EventDrawCardsDropN());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventDrawCardsDropN> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.CommonReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCardsDropN() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCardsDropN(EventDrawCardsDropN other) : this() {
+      iD_ = other.iD_;
+      dropN_ = other.dropN_;
+      Cards = other.cards_ != null ? other.Cards.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventDrawCardsDropN Clone() {
+      return new EventDrawCardsDropN(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private int iD_;
+    /// <summary>
+    ///* 虚拟事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ID {
+      get { return iD_; }
+      set {
+        iD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "DropN" field.</summary>
+    public const int DropNFieldNumber = 2;
+    private int dropN_;
+    /// <summary>
+    ///* 丢弃个数 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int DropN {
+      get { return dropN_; }
+      set {
+        dropN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Cards" field.</summary>
+    public const int CardsFieldNumber = 3;
+    private global::Protobuf.Data.Cards cards_;
+    /// <summary>
+    ///* 卡牌ID列表 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.Cards Cards {
+      get { return cards_; }
+      set {
+        cards_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventDrawCardsDropN);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventDrawCardsDropN other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (DropN != other.DropN) return false;
+      if (!object.Equals(Cards, other.Cards)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID != 0) hash ^= ID.GetHashCode();
+      if (DropN != 0) hash ^= DropN.GetHashCode();
+      if (cards_ != null) hash ^= Cards.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ID);
+      }
+      if (DropN != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(DropN);
+      }
+      if (cards_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Cards);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ID);
+      }
+      if (DropN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DropN);
+      }
+      if (cards_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Cards);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventDrawCardsDropN other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID != 0) {
+        ID = other.ID;
+      }
+      if (other.DropN != 0) {
+        DropN = other.DropN;
+      }
+      if (other.cards_ != null) {
+        if (cards_ == null) {
+          cards_ = new global::Protobuf.Data.Cards();
+        }
+        Cards.MergeFrom(other.Cards);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ID = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            DropN = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            if (cards_ == null) {
+              cards_ = new global::Protobuf.Data.Cards();
+            }
+            input.ReadMessage(cards_);
+            break;
+          }
         }
       }
     }

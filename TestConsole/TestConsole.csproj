@@ -45,6 +45,7 @@
     <Compile Include="Login\Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proto\Battle.cs" />
     <Compile Include="Proto\Common.cs" />
     <Compile Include="Proto\Game.cs" />
     <Compile Include="Proto\Login.cs" />

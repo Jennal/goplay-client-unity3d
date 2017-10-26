@@ -34,12 +34,15 @@ namespace Protobuf.Data {
             "cxgCIAEoCzIULnBiZGF0YS5QbGF5ZXJTdGF0dXMSFwoPUGxheWVyRGVhZFRp",
             "bWVzGAMgASgFEiAKB0NhcmRNYXAYBCABKAsyDy5wYmRhdGEuQ2FyZE1hcBIb",
             "ChNDdXJyZW50Q2FyZE1hcEluZGV4GAUgASgFIiMKEkR1bmdlb25Nb3ZlUmVx",
-            "dWVzdBINCgVJbmRleBgBIAEoBSI0ChNEdW5nZW9uTW92ZVJlc3BvbnNlEh0K",
-            "BkV2ZW50cxgBIAMoCzINLnBiZGF0YS5FdmVudCIqChpEdW5nZW9uUmV2aXZl",
-            "UHJpY2VSZXNwb25zZRIMCgRHb2xkGAEgASgFIigKFUR1bmdlb25SZXZpdmVS",
-            "ZXNwb25zZRIPCgdTdWNjZXNzGAEgASgIIkAKFUR1bmdlb25GaW5pc2hSZXNw",
-            "b25zZRInCgdSZXdhcmRzGAEgAygLMhYucGJkYXRhLkNhcmRQYWNrUmV3YXJk",
-            "QhCqAg1Qcm90b2J1Zi5EYXRhYgZwcm90bzM="));
+            "dWVzdBINCgVJbmRleBgBIAEoBSIzChNEdW5nZW9uTW92ZVJlc3BvbnNlEhwK",
+            "BUV2ZW50GAEgASgLMg0ucGJkYXRhLkV2ZW50IioKGkR1bmdlb25SZXZpdmVQ",
+            "cmljZVJlc3BvbnNlEgwKBEdvbGQYASABKAUiKAoVRHVuZ2VvblJldml2ZVJl",
+            "c3BvbnNlEg8KB1N1Y2Nlc3MYASABKAgiQAoVRHVuZ2VvbkZpbmlzaFJlc3Bv",
+            "bnNlEicKB1Jld2FyZHMYASADKAsyFi5wYmRhdGEuQ2FyZFBhY2tSZXdhcmQi",
+            "QAoYRXZlbnRDaG9vc2VPcHRpb25SZXF1ZXN0Eg8KB0V2ZW50SUQYASABKAUS",
+            "EwoLT3B0aW9uSW5kZXgYAiADKAUiOQoZRXZlbnRDaG9vc2VPcHRpb25SZXNw",
+            "b25zZRIcCgVFdmVudBgBIAEoCzINLnBiZGF0YS5FdmVudEIQqgINUHJvdG9i",
+            "dWYuRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Protobuf.Data.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -50,10 +53,12 @@ namespace Protobuf.Data {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonStartRequest), global::Protobuf.Data.DungeonStartRequest.Parser, new[]{ "Dungeon" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonStartResponse), global::Protobuf.Data.DungeonStartResponse.Parser, new[]{ "DungeonLevel", "PlayerStatus", "PlayerDeadTimes", "CardMap", "CurrentCardMapIndex" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonMoveRequest), global::Protobuf.Data.DungeonMoveRequest.Parser, new[]{ "Index" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonMoveResponse), global::Protobuf.Data.DungeonMoveResponse.Parser, new[]{ "Events" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonMoveResponse), global::Protobuf.Data.DungeonMoveResponse.Parser, new[]{ "Event" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonRevivePriceResponse), global::Protobuf.Data.DungeonRevivePriceResponse.Parser, new[]{ "Gold" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonReviveResponse), global::Protobuf.Data.DungeonReviveResponse.Parser, new[]{ "Success" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonFinishResponse), global::Protobuf.Data.DungeonFinishResponse.Parser, new[]{ "Rewards" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.DungeonFinishResponse), global::Protobuf.Data.DungeonFinishResponse.Parser, new[]{ "Rewards" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventChooseOptionRequest), global::Protobuf.Data.EventChooseOptionRequest.Parser, new[]{ "EventID", "OptionIndex" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protobuf.Data.EventChooseOptionResponse), global::Protobuf.Data.EventChooseOptionResponse.Parser, new[]{ "Event" }, null, null, null)
           }));
     }
     #endregion
@@ -1088,7 +1093,7 @@ namespace Protobuf.Data {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DungeonMoveResponse(DungeonMoveResponse other) : this() {
-      events_ = other.events_.Clone();
+      Event = other.event_ != null ? other.Event.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1096,17 +1101,18 @@ namespace Protobuf.Data {
       return new DungeonMoveResponse(this);
     }
 
-    /// <summary>Field number for the "Events" field.</summary>
-    public const int EventsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Protobuf.Data.Event> _repeated_events_codec
-        = pb::FieldCodec.ForMessage(10, global::Protobuf.Data.Event.Parser);
-    private readonly pbc::RepeatedField<global::Protobuf.Data.Event> events_ = new pbc::RepeatedField<global::Protobuf.Data.Event>();
+    /// <summary>Field number for the "Event" field.</summary>
+    public const int EventFieldNumber = 1;
+    private global::Protobuf.Data.Event event_;
     /// <summary>
-    ///* 移动后的事件列表 */
+    ///* 移动后的事件，为空表示没有事件触发 */
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Protobuf.Data.Event> Events {
-      get { return events_; }
+    public global::Protobuf.Data.Event Event {
+      get { return event_; }
+      set {
+        event_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1122,14 +1128,14 @@ namespace Protobuf.Data {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!events_.Equals(other.events_)) return false;
+      if (!object.Equals(Event, other.Event)) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= events_.GetHashCode();
+      if (event_ != null) hash ^= Event.GetHashCode();
       return hash;
     }
 
@@ -1140,13 +1146,18 @@ namespace Protobuf.Data {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      events_.WriteTo(output, _repeated_events_codec);
+      if (event_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Event);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      size += events_.CalculateSize(_repeated_events_codec);
+      if (event_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Event);
+      }
       return size;
     }
 
@@ -1155,7 +1166,12 @@ namespace Protobuf.Data {
       if (other == null) {
         return;
       }
-      events_.Add(other.events_);
+      if (other.event_ != null) {
+        if (event_ == null) {
+          event_ = new global::Protobuf.Data.Event();
+        }
+        Event.MergeFrom(other.Event);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1167,7 +1183,10 @@ namespace Protobuf.Data {
             input.SkipLastField();
             break;
           case 10: {
-            events_.AddEntriesFrom(input, _repeated_events_codec);
+            if (event_ == null) {
+              event_ = new global::Protobuf.Data.Event();
+            }
+            input.ReadMessage(event_);
             break;
           }
         }
@@ -1526,6 +1545,279 @@ namespace Protobuf.Data {
             break;
           case 10: {
             rewards_.AddEntriesFrom(input, _repeated_rewards_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// 玩家选择选项 
+  /// </summary>
+  public sealed partial class EventChooseOptionRequest : pb::IMessage<EventChooseOptionRequest> {
+    private static readonly pb::MessageParser<EventChooseOptionRequest> _parser = new pb::MessageParser<EventChooseOptionRequest>(() => new EventChooseOptionRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventChooseOptionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.GameReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventChooseOptionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventChooseOptionRequest(EventChooseOptionRequest other) : this() {
+      eventID_ = other.eventID_;
+      optionIndex_ = other.optionIndex_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventChooseOptionRequest Clone() {
+      return new EventChooseOptionRequest(this);
+    }
+
+    /// <summary>Field number for the "EventID" field.</summary>
+    public const int EventIDFieldNumber = 1;
+    private int eventID_;
+    /// <summary>
+    ///* 事件ID 或 虚拟事件ID */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EventID {
+      get { return eventID_; }
+      set {
+        eventID_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "OptionIndex" field.</summary>
+    public const int OptionIndexFieldNumber = 2;
+    private static readonly pb::FieldCodec<int> _repeated_optionIndex_codec
+        = pb::FieldCodec.ForInt32(18);
+    private readonly pbc::RepeatedField<int> optionIndex_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    ///* 玩家选择的选项 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> OptionIndex {
+      get { return optionIndex_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventChooseOptionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventChooseOptionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EventID != other.EventID) return false;
+      if(!optionIndex_.Equals(other.optionIndex_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EventID != 0) hash ^= EventID.GetHashCode();
+      hash ^= optionIndex_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (EventID != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(EventID);
+      }
+      optionIndex_.WriteTo(output, _repeated_optionIndex_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (EventID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EventID);
+      }
+      size += optionIndex_.CalculateSize(_repeated_optionIndex_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventChooseOptionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EventID != 0) {
+        EventID = other.EventID;
+      }
+      optionIndex_.Add(other.optionIndex_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            EventID = input.ReadInt32();
+            break;
+          }
+          case 18:
+          case 16: {
+            optionIndex_.AddEntriesFrom(input, _repeated_optionIndex_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class EventChooseOptionResponse : pb::IMessage<EventChooseOptionResponse> {
+    private static readonly pb::MessageParser<EventChooseOptionResponse> _parser = new pb::MessageParser<EventChooseOptionResponse>(() => new EventChooseOptionResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventChooseOptionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protobuf.Data.GameReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventChooseOptionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventChooseOptionResponse(EventChooseOptionResponse other) : this() {
+      Event = other.event_ != null ? other.Event.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventChooseOptionResponse Clone() {
+      return new EventChooseOptionResponse(this);
+    }
+
+    /// <summary>Field number for the "Event" field.</summary>
+    public const int EventFieldNumber = 1;
+    private global::Protobuf.Data.Event event_;
+    /// <summary>
+    ///* 选择选项以后触发的事件，可能为空，为空时表示事件结束 */
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protobuf.Data.Event Event {
+      get { return event_; }
+      set {
+        event_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventChooseOptionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventChooseOptionResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Event, other.Event)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (event_ != null) hash ^= Event.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (event_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Event);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (event_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Event);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventChooseOptionResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.event_ != null) {
+        if (event_ == null) {
+          event_ = new global::Protobuf.Data.Event();
+        }
+        Event.MergeFrom(other.Event);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (event_ == null) {
+              event_ = new global::Protobuf.Data.Event();
+            }
+            input.ReadMessage(event_);
             break;
           }
         }
