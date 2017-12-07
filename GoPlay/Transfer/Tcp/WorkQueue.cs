@@ -29,12 +29,20 @@ namespace GoPlay.Transfer.Tcp
             {
                 while (true)
                 {
-                    if(m_queue.Count <= 0) continue;
+                    if (m_queue.Count <= 0)
+                    {
+                        Thread.Sleep(20);
+                        continue;
+                    }
 
                     KeyValuePair<Action, Action<Exception>> pair;
                     lock (m_locker)
                     {
-                        if (m_queue.Count <= 0) continue;
+                        if (m_queue.Count <= 0)
+                        {
+                            Thread.Sleep(20);
+                            continue;
+                        }
                         pair = m_queue.Dequeue();
                     }
 

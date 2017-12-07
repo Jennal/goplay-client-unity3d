@@ -8,7 +8,7 @@ namespace GoPlay.Transfer.Tcp
 {
     public class Tcp : ITransfer
     {
-        public const int TIME_OUT = 8000;
+        public const int TIME_OUT = 60000;
         public const int BUFFER_SIZE = 1024;
 
         private byte[] m_buffer = new byte[1024];
