@@ -12,6 +12,11 @@ namespace GoPlay.Transfer.Tcp
             get { return m_stream.CanRead; }
         }
 
+        public bool CanWrite
+        {
+            get { return m_stream.CanWrite; }
+        }
+
         public int ReadTimeout
         {
             get { return m_stream.ReadTimeout; }
@@ -46,6 +51,8 @@ namespace GoPlay.Transfer.Tcp
         {
             m_readQueue.Enqueue(() =>
             {
+                while (!CanRead) ;
+
                 m_lastReadLength = m_stream.Read(buffer, offset, size);
                 callback(null);
             }, OnErrorEvent);
@@ -64,6 +71,8 @@ namespace GoPlay.Transfer.Tcp
         {
             m_writeQueue.Enqueue(() =>
             {
+                while (!CanWrite) ;
+
                 m_stream.Write(buffer, offset, size);
                 m_lastWriteLength = size;
                 callback(null);
