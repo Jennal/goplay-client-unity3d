@@ -48,7 +48,7 @@ namespace TestConsole
             {
                 pclient.Request("login.guest.login", new Protobuf.Data.LoginTokenRequest
                 {
-                    UserToken = "f833841fa4c411e7885588d7f6e0b991"//resp.UserToken
+                    UserToken = "8ba1ee3ed40611e7b92b88d7f6e0b990"//resp.UserToken
                 }, (Protobuf.Data.LoginResponse loginResp) =>
                 {
                     Console.WriteLine("login.guest.login Success: {0}", loginResp.UserToken);
@@ -301,7 +301,7 @@ namespace TestConsole
             //TestGetProtoServerStatus();
             //TestProtoLogin();
             TestProtoGame();
-            pclient.Connect("192.168.1.200", 24680);
+            pclient.Connect("192.168.1.200", 24681);
             //pclient.Connect("", 24680);
         }
 

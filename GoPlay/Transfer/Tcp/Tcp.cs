@@ -17,11 +17,16 @@ namespace GoPlay.Transfer.Tcp
         private int m_connectedPort;
 
         private TcpClient m_tcpClient;
-        public NetworkStream Stream
+        private NetworkStreamWrapper m_networkStream;
+        public NetworkStreamWrapper Stream
         {
             get
             {
-                return m_tcpClient.GetStream();
+                if (m_networkStream == null)
+                {
+                    m_networkStream = new NetworkStreamWrapper(m_tcpClient.GetStream());
+                }
+                return m_networkStream;
             }
         }
 
@@ -83,8 +88,10 @@ namespace GoPlay.Transfer.Tcp
                 if (m_tcpClient == null) m_tcpClient = new TcpClient();
 
                 m_tcpClient.Connect(host, port);
+                m_networkStream = new NetworkStreamWrapper(m_tcpClient.GetStream());
                 Stream.ReadTimeout = TIME_OUT;
                 Stream.WriteTimeout = TIME_OUT;
+                Stream.OnError += OnErrorEvent;
                 OnConnectedEvent(this);
             }
             catch (Exception err)
@@ -99,6 +106,11 @@ namespace GoPlay.Transfer.Tcp
 
             m_tcpClient.Close();
             m_tcpClient = null;
+
+            m_networkStream.OnError -= OnErrorEvent;
+            m_networkStream.Dispose();
+            m_networkStream = null;
+
             OnDisconnectedEvent(this);
         }
 
@@ -114,7 +126,7 @@ namespace GoPlay.Transfer.Tcp
                     {
                         if (!Connected) return;
 
-                        int length = Stream.EndRead(state);
+                        var length = Stream.EndRead(state);
                         if (length > 0)
                         {
                             using (var ms = new MemoryStream())

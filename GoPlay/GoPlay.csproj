@@ -76,7 +76,9 @@
     <Compile Include="Service\Processor\RecvProcessor.cs" />
     <Compile Include="Service\Processor\SendProcessor.cs" />
     <Compile Include="Transfer\Interface\ITransfer.cs" />
+    <Compile Include="Transfer\Tcp\NetworkStreamWrapper.cs" />
     <Compile Include="Transfer\Tcp\Tcp.cs" />
+    <Compile Include="Transfer\Tcp\WorkQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Google.Protobuf\Google.Protobuf.csproj">
